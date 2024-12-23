@@ -97,7 +97,18 @@ export default function Header({ variant }) {
                       {/* <li>
                             <Link
                               to="service/cms"
-                              onClick={() => setMobileToggle(false)}
+                              onClick={()Our Target Audience
+￼
+Families
+Focused on financial literacy, long-term planning, and guidance for children’s skill acquisition.
+
+￼
+Startups & MSMEs
+Supporting legal compliance, financial advisory, and mentorship to help them scale and succeed.
+
+￼
+Young Entrepreneurs
+Targeting Gen-Z innovators with mentorship and business advisory to help them build succe => setMobileToggle(false)}
                             >
                               CMS (Content Management Systems)
                             </Link>
