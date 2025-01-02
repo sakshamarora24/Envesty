@@ -162,7 +162,7 @@ export default function Home() {
                   <Card
                     title="Legal Compliance"
                     link="/service/service-details"
-                    src="/images/latest/pexels-rdne-7821573.jpg"
+                    src="/images/latest/pexels-rdne-7821937.jpg"
                     alt="Service"
                   />
                   <Spacing lg="0" md="30" />
