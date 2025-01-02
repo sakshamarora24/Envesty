@@ -43,7 +43,7 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
                 <TextWidget
-                  logoSrc='/images/logo_only.png'
+                  logoSrc='/images/latest/image.png'
                   logoAlt='Logo'
                   logoStyle={{ height: 'auto'}}  // Adjust the height as needed
                 />
