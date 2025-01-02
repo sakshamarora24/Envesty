@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../Card';
-import FunFact from '../FunFact';
+// import FunFact from '../FunFact';
+import InfoLine from '../InfoLine'
+// import Cta from '../Cta';
 import Hero from '../Hero';
 import Div from '../Div';
 import SectionHeading from '../SectionHeading';
@@ -62,24 +64,24 @@ export default function Home() {
   // ];
 
   // FunFact Data
-  const funfaceData = [
-    {
-      title: 'Global Happy Clients',
-      factNumber: '40',
-    },
-    {
-      title: 'Project Completed',
-      factNumber: '50',
-    },
-    {
-      title: 'Team Members',
-      factNumber: '10',
-    },
-    {
-      title: 'Digital products',
-      factNumber: '2',
-    },
-  ];
+  // const funfaceData = [
+  //   {
+  //     title: 'Global Happy Clients',
+  //     factNumber: '40',
+  //   },
+  //   {
+  //     title: 'Project Completed',
+  //     factNumber: '50',
+  //   },
+  //   {
+  //     title: 'Team Members',
+  //     factNumber: '10',
+  //   },
+  //   {
+  //     title: 'Digital products',
+  //     factNumber: '2',
+  //   },
+  // ];
 
   useEffect(() => {
     pageTitle('Home');
@@ -113,11 +115,9 @@ export default function Home() {
 
       {/* Start FunFact Section */}
       <div className="container">
-        <FunFact
+        <InfoLine
           variant="cs-type1"
           title={`"Empowering Dreams, Simplifying Success – Big4 Services at MSME Prices!"`}
-          subtitle=""
-          data={funfaceData}
         />
       </div>
       {/* End FunFact Section */}
