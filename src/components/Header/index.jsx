@@ -32,7 +32,7 @@ export default function Header({ variant }) {
             <Div className="cs-main_header_in">
               <Div className="cs-main_header_left">
                 <Link className="cs-site_branding" to="/">
-                  <img src="/images/logo_only.png" alt="Logo" style={{ width: 'auto', height: 'auto' }} />
+                  <img src="/images/latest/image.png" alt="Logo" style={{ width: 'max-content', height: 'max-content' }} />
                 </Link>
 
               </Div>
