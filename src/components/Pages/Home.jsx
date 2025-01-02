@@ -172,7 +172,7 @@ export default function Home() {
                   <Card
                     title="Digital Transformation"
                     link="/service/service-details"
-                    src="/images/service_4.jpeg"
+                    src="/images/latest/pexels-rdne-7821937.jpg"
                     alt="Service"
                   />
                   <Spacing lg="0" md="30" />
@@ -270,7 +270,7 @@ export default function Home() {
           {/* Families */}
           <Div className="col-lg-4">
             <Div className="cs-target_card cs-shadow_box_1">
-              <img src="/images/family_icon.svg" alt="Families" className="cs-icon" />
+              <img src="/images/latest/target1.jpeg" alt="Families" className="cs-icon" />
               <h4 className="cs-font_30">Families</h4>
               <p className="cs-font_16">
                 Focused on financial literacy, long-term planning, and guidance for children’s skill acquisition.
@@ -281,7 +281,7 @@ export default function Home() {
           {/* Startups & MSMEs */}
           <Div className="col-lg-4">
             <Div className="cs-target_card cs-shadow_box_1">
-              <img src="/images/startup_icon.svg" alt="Startups & MSMEs" className="cs-icon" />
+              <img src="/images/latest/target2.jpeg" alt="Startups & MSMEs" className="cs-icon" />
               <h4 className="cs-font_30">Startups & MSMEs</h4>
               <p className="cs-font_16">
                 Supporting legal compliance, financial advisory, and mentorship to help them scale and succeed.
@@ -292,7 +292,7 @@ export default function Home() {
           {/* Young Entrepreneurs */}
           <Div className="col-lg-4">
             <Div className="cs-target_card cs-shadow_box_1">
-              <img src="/images/entrepreneur_icon.svg" alt="Young Entrepreneurs" className="cs-icon" />
+              <img src="/images/latest/target3.jpeg" alt="Young Entrepreneurs" className="cs-icon" />
               <h4 className="cs-font_30">Young Entrepreneurs</h4>
               <p className="cs-font_16">
                 Targeting Gen-Z innovators with mentorship and business advisory to help them build successful ventures.
@@ -317,7 +317,7 @@ export default function Home() {
           {/* Financial Literacy and Advisory */}
           <Div className="col-lg-3 col-sm-6">
             <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/financial_advisory_icon.svg" alt="Financial Literacy" className="cs-icon" />
+              <img src="/images/latest/home5.jpeg" alt="Financial Literacy" className="cs-icon" />
               <h5 className="cs-font_20">Financial Literacy and Advisory</h5>
               <p className="cs-font_16">
                 We help families and businesses make smart investments and plan for a secure future.
@@ -328,7 +328,7 @@ export default function Home() {
           {/* Skill Development */}
           <Div className="col-lg-3 col-sm-6">
             <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/skill_dev_icon.svg" alt="Skill Development" className="cs-icon" />
+              <img src="/images/latest/home6.jpeg" alt="Skill Development" className="cs-icon" />
               <h5 className="cs-font_20">Skill Development</h5>
               <p className="cs-font_16">
                 Offering skill-building programs in trending fields like AI, digital marketing, and entrepreneurship.
@@ -339,7 +339,7 @@ export default function Home() {
           {/* Legal Compliance */}
           <Div className="col-lg-3 col-sm-6">
             <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/legal_compliance_icon.svg" alt="Legal Compliance" className="cs-icon" />
+              <img src="/images/latest/home7.jpeg" alt="Legal Compliance" className="cs-icon" />
               <h5 className="cs-font_20">Legal Compliance</h5>
               <p className="cs-font_16">
                 We offer registration, tax compliance, and legal advisory services to businesses and families.
@@ -350,7 +350,7 @@ export default function Home() {
           {/* Mentorship Services */}
           <Div className="col-lg-3 col-sm-6">
             <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/mentorship_icon.svg" alt="Mentorship Services" className="cs-icon" />
+              <img src="/images/latest/home8.jpeg" alt="Mentorship Services" className="cs-icon" />
               <h5 className="cs-font_20">Mentorship Services</h5>
               <p className="cs-font_16">
                 Providing personalized mentorship programs for startups, young entrepreneurs, and parents.
@@ -361,7 +361,7 @@ export default function Home() {
           {/* Community Building */}
           <Div className="col-lg-3 col-sm-6">
             <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/community_icon.svg" alt="Community Building" className="cs-icon" />
+              <img src="/images/latest/home9.jpeg" alt="Community Building" className="cs-icon" />
               <h5 className="cs-font_20">Community Building</h5>
               <p className="cs-font_16">
                 Creating a platform for networking and knowledge sharing within the startup and family ecosystem.
@@ -391,7 +391,7 @@ export default function Home() {
         <Spacing lg="85" md="45" />
         <TeamSlider />
       </Div> */}
-      <Spacing lg="150" md="80" />
+      {/*<Spacing lg="150" md="80" />*/}
       {/* End Team Section */}
 
       {/* Start Testimonial Section */}

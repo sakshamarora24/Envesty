@@ -89,7 +89,7 @@ export default function DigitalMarketing() {
                     </Div>
                     <Div className="col-lg-3 col-sm-6">
                         <div className="service-box cs-hover-effect">
-                            <img src='/images/icons/service_icon_4.svg' alt="Video Marketing" />
+                            <img src='/images/icons/service_icon_1.svg' alt="Video Marketing" />
                             <h4>Mentorship Programs</h4>
                             <p>Connecting individuals and businesses with seasoned mentors for guidance and growth. Hosting group mentorship sessions and workshops to inspire innovation.</p>
                         </div>
