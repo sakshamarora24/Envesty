@@ -31,30 +31,35 @@ export default function CareersPage() {
 
             <Div className="job-listing">
               <Div className="job-item">
-                <h3>Legal Intern</h3>
+                <h3>HR Head</h3>
                 <p>
-                  We are looking for a highly motivated Legal Intern to assist in providing legal support across various projects.
-                </p>
-                <p><strong>Location:</strong> Noida</p>
-                <p><strong>Duration:</strong> 3 months</p>
-              </Div>
-
-              <Div className="job-item">
-                <h3>Video Editor</h3>
-                <p>
-                  We are seeking a creative Video Editor to help edit and create engaging video content for our brand.
+                  Join our team to manage human resources.
                 </p>
                 <p><strong>Location:</strong> Remote</p>
-                <p><strong>Duration:</strong> Full-time</p>
               </Div>
 
               <Div className="job-item">
-                <h3>Web Dev Intern</h3>
+                <h3>Legal and Financial Services</h3>
                 <p>
-                  Join our development team as a Web Dev Intern and assist in building and maintaining websites and web applications.
+                  We are looking for a highly motivated Legal/Financial team to assist in providing legal support across various projects.
                 </p>
-                <p><strong>Location:</strong> Noida</p>
-                <p><strong>Duration:</strong> 3-6 months</p>
+                <p><strong>Location:</strong> Remote</p>
+              </Div>
+
+              <Div className="job-item">
+                <h3>Business Development Executive</h3>
+                <p>
+                  We are seeking a Business Development Executive to help grow our brand.
+                </p>
+                <p><strong>Location:</strong> Remote</p>
+              </Div>
+
+              <Div className="job-item">
+                <h3>Marketing and Sales Executive</h3>
+                <p>
+                  Join our marketing and sales team to help business with clients and brand presence.
+                </p>
+                <p><strong>Location:</strong> Remote</p>
               </Div>
             </Div>
 
@@ -76,6 +81,16 @@ export default function CareersPage() {
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Phone*</label>
                 <input type="text" className="cs-form_field" />
+                <Spacing lg="20" md="20" />
+              </Div>
+              <Div className="col-sm-6">
+                <label className="cs-primary_color">Area Of Interest*</label>
+                <input type="text" className="cs-form_field" />
+                <Spacing lg="20" md="20" />
+              </Div>
+              <Div className="col-sm-6">
+                <label className="cs-primary_color">Profile*</label>
+                <input type="text" placeholder="Intern or Part-Time" className="cs-form_field" />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-12">

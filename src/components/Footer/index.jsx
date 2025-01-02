@@ -39,13 +39,13 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
     <footer className="cs-fooer">
       <Div className="cs-fooer_main">
         <Div className="container">
-          <Div className="row">
+          <Div className="row flex">
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
                 <TextWidget
                   logoSrc='/images/logo_only.png'
                   logoAlt='Logo'
-                  logoStyle={{ height: '50px' }}  // Adjust the height as needed
+                  logoStyle={{ height: 'auto' }}  // Adjust the height as needed
                 />
 
                 {/* <SocialWidget /> */}

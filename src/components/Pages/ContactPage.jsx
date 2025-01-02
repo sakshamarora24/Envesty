@@ -24,7 +24,7 @@ export default function ContactPage() {
         <Div className="row">
           <Div className="col-lg-6">
             <SectionHeading
-              title="Do you have a project <br/>in your mind?"
+              title="Get Started with envesty Today"
               subtitle="Getting Touch"
             />
             <Spacing lg="55" md="30" />
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-12">
-                <label className="cs-primary_color">Mobile*</label>
+                <label className="cs-primary_color">Project Description*</label>
                 <textarea
                   cols="30"
                   rows="7"

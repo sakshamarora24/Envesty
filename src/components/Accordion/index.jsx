@@ -12,20 +12,32 @@ export default function Accordion() {
   }
   const accordionData = [
     {
-      "question": "How do your SEO services enhance website visibility and organic search rankings?",
-      "answer": "Our SEO services are focused on optimizing your website for better visibility in search engines. We employ advanced strategies including keyword optimization, backlink building, and on-page SEO techniques to improve your organic search rankings, driving more traffic and leads to your business."
+      "Question": "How can I start a business with limited funds?",
+      "Answer": "Starting a business with limited funds requires creativity and strategic planning. Focus on creating a minimum viable product (MVP), use free or low-cost tools, and leverage partnerships or collaborations. Crowdfunding and small business loans can also help."
     },
     {
-      "question": "Can you detail the approach your team takes in crafting effective content marketing strategies?",
-      "answer": "Our content marketing approach is centered around understanding your brand and audience. We create high-quality, engaging content tailored to your target market. From blog posts to infographics, our aim is to tell your brand's story in a way that resonates with your audience and fosters lasting connections."
+      "Question": "What certifications are necessary to grow my business?",
+      "Answer": "The certifications depend on your industry. For startups, certifications like GST registration, MSME registration, and business incorporation under the Companies Act are essential. For individuals, certifications in project management (e.g., PMP) or financial literacy (e.g., NISM) can enhance credibility."
     },
     {
-      "question": "What makes your social media marketing strategies successful in building brand loyalty and driving conversions?",
-      "answer": "Our social media marketing strategies are built on deep audience insights and creative storytelling. We create engaging content and campaigns that resonate with your audience. Our focus is on building a strong brand presence across various platforms, engaging with your audience, and driving conversions through targeted social media tactics."
+      "Question": "How can I ensure my startup complies with legal regulations?",
+      "Answer": "Compliance involves adhering to tax laws, labor regulations, and business-specific laws. Tools like ClearTax and VakilSearch can help automate compliance. Partnering with a legal consultant is also highly recommended."
     },
     {
-      "question": "How do you ensure PPC advertising campaigns are cost-effective and yield high ROI?",
-      "answer": "Our PPC advertising campaigns are meticulously planned and executed. We focus on targeting the right audience at the right time with the right message. Our strategies are data-driven, ensuring that every campaign is cost-effective and designed to maximize your return on investment."
+      "Question": "What are the trending skills my team or I should focus on?",
+      "Answer": "Trending skills include AI and machine learning, digital marketing, content creation, and financial management. Platforms like Coursera, Udemy, and LinkedIn Learning offer affordable courses to help develop these skills."
+    },
+    {
+      "Question": "How do I create a business plan for my startup?",
+      "Answer": "A business plan should include an executive summary, market analysis, financial projections, and a marketing strategy. Templates from platforms like LivePlan or Canva can simplify the process."
+    },
+    {
+      "Question": "What mentorship options are available for startups?",
+      "Answer": "Mentorship options include joining accelerators or incubators, connecting with industry experts on platforms like LinkedIn, or participating in online startup communities."
+    },
+    {
+      "Question": "How can I upskill myself while managing my business?",
+      "Answer": "Use flexible learning platforms like Skillshare or Udemy that offer self-paced courses. Dedicate specific hours weekly for skill development to balance learning with business operations."
     },
   ]
   return (

@@ -19,7 +19,7 @@ export default function Home() {
 
   const showcaseData = [
     {
-      title: 'Empower Your Business with Financial Expertise <br> and Insight',
+      title: 'Empower Your Business with Financial and <br> Legal Expertise',
       bgImageUrl: '/images/hero_bg.jpeg',
     },
     {
@@ -31,7 +31,7 @@ export default function Home() {
       bgImageUrl: '/images/slider_2.jpeg',
     },
     {
-      title: 'Achieve Financial Independence <br> through Strategic Investments',
+      title: 'Creating a community of <br> Successful Startups',
       bgImageUrl: '/images/slider_3.jpeg',
     },
     {
@@ -43,7 +43,7 @@ export default function Home() {
       bgImageUrl: '/images/slider_5.jpeg',
     },
     {
-      title: 'Unlock Your Entrepreneurial Potential <br> and Build a Thriving Business',
+      title: 'Unlock Your Entrepreneurial Potential and Build <br> a Thriving Business',
       bgImageUrl: '/images/slider_7.jpeg',
     },
   ];
@@ -115,8 +115,8 @@ export default function Home() {
       <div className="container">
         <FunFact
           variant="cs-type1"
-          title="Our fun fact"
-          subtitle="Empowering Your Business Journey: From Digital Visibility to Operational Excellence. Unleash the Power of Tailored Digital Marketing, App & Website Development, Strategic Branding, Creative Solutions, and Advanced Tech Integrations with Our Expertise."
+          title={`"Empowering Dreams, Simplifying Success – Big4 Services at MSME Prices!"`}
+          subtitle=""
           data={funfaceData}
         />
       </div>
@@ -153,7 +153,7 @@ export default function Home() {
                   <Card
                     title="Financial Compliance"
                     link="/service/service-details"
-                    src="/images/service_2.jpeg"
+                    src="/images/latest/pexels-shkrabaanthony-5816298.jpg"
                     alt="Service"
                   />
                   <Spacing lg="0" md="30" />
@@ -162,7 +162,7 @@ export default function Home() {
                   <Card
                     title="Legal Compliance"
                     link="/service/service-details"
-                    src="/images/service_3.jpeg"
+                    src="/images/latest/pexels-rdne-7821573.jpg"
                     alt="Service"
                   />
                   <Spacing lg="0" md="30" />
