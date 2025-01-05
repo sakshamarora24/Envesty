@@ -6,6 +6,7 @@ import './header.scss';
 import ContactInfoWidget from '../Widget/ContactInfoWidget';
 import Div from '../Div';
 // import DropDown from './DropDown';
+import styles from './Header.module.css';
 
 export default function Header({ variant }) {
   const [isSticky, setIsSticky] = useState(false);
@@ -297,7 +298,7 @@ Targeting Gen-Z innovators with mentorship and business advisory to help them bu
         <Div className="cs-side_header_in">
           <Div className="cs-side_header_shape" />
           <Link className="cs-site_branding" to="/">
-            <img src="/images/logo_only.png" height="100px" width="100px" alt="Logo" />
+            <img src="/images/logo_only.png" className={`${styles.logo} ${isSticky ? styles.sticky : ''}`} alt="Logo" />
           </Link>
           <Div className="cs-side_header_box">
             <h2 className="cs-side_header_heading">
