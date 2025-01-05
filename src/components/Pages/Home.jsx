@@ -13,6 +13,7 @@ import Spacing from '../Spacing';
 
 // import TimelineSlider from '../Slider/TimelineSlider';
 import { pageTitle } from '../../helper';
+import styles from './Home.module.css';
 
 export default function Home() {
 
@@ -22,7 +23,7 @@ export default function Home() {
   const showcaseData = [
     {
       title: 'Empower Your Business with Financial and <br> Legal Expertise',
-      bgImageUrl: '/images/hero_bg.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Master Financial Planning and Grow Your Wealth <br> with Confidence',
@@ -30,23 +31,23 @@ export default function Home() {
     },
     {
       title: 'Navigate Your Financial Future <br> with Tailored Advice',
-      bgImageUrl: '/images/slider_2.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Creating a community of <br> Successful Startups',
-      bgImageUrl: '/images/slider_3.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Simplify Your Business Compliance <br> and Scale with Ease',
-      bgImageUrl: '/images/slider_4.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Develop the Skills You Need <br> to Succeed in the Modern Economy',
-      bgImageUrl: '/images/slider_5.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Unlock Your Entrepreneurial Potential and Build <br> a Thriving Business',
-      bgImageUrl: '/images/slider_7.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
   ];
 
@@ -160,7 +161,7 @@ export default function Home() {
                 </Div>
                 <Div className="col-lg-3 col-sm-6">
                   <Card
-                    title="Legal Compliance"
+                    title="Business Compliance"
                     link="/service/service-details"
                     src="/images/latest/pexels-rdne-7821937.jpg"
                     alt="Service"
@@ -269,7 +270,7 @@ export default function Home() {
         <Div className="row">
           {/* Families */}
           <Div className="col-lg-4">
-            <Div className="cs-target_card cs-shadow_box_1">
+            <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
               <img src="/images/latest/target1.jpeg" alt="Families" className="cs-icon" />
               <h4 className="cs-font_30">Families</h4>
               <p className="cs-font_16">
@@ -280,7 +281,7 @@ export default function Home() {
 
           {/* Startups & MSMEs */}
           <Div className="col-lg-4">
-            <Div className="cs-target_card cs-shadow_box_1">
+            <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
               <img src="/images/latest/target2.jpeg" alt="Startups & MSMEs" className="cs-icon" />
               <h4 className="cs-font_30">Startups & MSMEs</h4>
               <p className="cs-font_16">
@@ -291,7 +292,7 @@ export default function Home() {
 
           {/* Young Entrepreneurs */}
           <Div className="col-lg-4">
-            <Div className="cs-target_card cs-shadow_box_1">
+            <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
               <img src="/images/latest/target3.jpeg" alt="Young Entrepreneurs" className="cs-icon" />
               <h4 className="cs-font_30">Young Entrepreneurs</h4>
               <p className="cs-font_16">
@@ -316,7 +317,7 @@ export default function Home() {
         <Div className="row">
           {/* Financial Literacy and Advisory */}
           <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
+            <Div className={`cs-shadow_box_2 ${styles['cs-key_card']}`}>
               <img src="/images/latest/home5.jpeg" alt="Financial Literacy" className="cs-icon" />
               <h5 className="cs-font_20">Financial Literacy and Advisory</h5>
               <p className="cs-font_16">
@@ -327,7 +328,7 @@ export default function Home() {
 
           {/* Skill Development */}
           <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
+            <Div className={`cs-shadow_box_2 ${styles['cs-key_card']}`}>
               <img src="/images/latest/home6.jpeg" alt="Skill Development" className="cs-icon" />
               <h5 className="cs-font_20">Skill Development</h5>
               <p className="cs-font_16">
@@ -338,7 +339,7 @@ export default function Home() {
 
           {/* Legal Compliance */}
           <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
+            <Div className={`cs-shadow_box_2 ${styles['cs-key_card']}`}>
               <img src="/images/latest/home7.jpeg" alt="Legal Compliance" className="cs-icon" />
               <h5 className="cs-font_20">Legal Compliance</h5>
               <p className="cs-font_16">
@@ -349,7 +350,7 @@ export default function Home() {
 
           {/* Mentorship Services */}
           <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
+            <Div className={`cs-shadow_box_2 ${styles['cs-key_card']}`}>
               <img src="/images/latest/home8.jpeg" alt="Mentorship Services" className="cs-icon" />
               <h5 className="cs-font_20">Mentorship Services</h5>
               <p className="cs-font_16">
@@ -360,7 +361,7 @@ export default function Home() {
 
           {/* Community Building */}
           <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
+            <Div className={`cs-shadow_box_2 ${styles['cs-key_card']}`}>
               <img src="/images/latest/home9.jpeg" alt="Community Building" className="cs-icon" />
               <h5 className="cs-font_20">Community Building</h5>
               <p className="cs-font_16">

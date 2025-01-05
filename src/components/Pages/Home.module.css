@@ -1,0 +1,75 @@
+.cs-target_card {
+  text-align: center;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.cs-target_card:hover {
+  transform: translateY(-5px);
+}
+
+.cs-target_card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.cs-key_card {
+  text-align: center;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.cs-key_card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+  .cs-target_card img {
+    height: 180px;
+  }
+  
+  .cs-key_card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-target_card {
+    margin-bottom: 2rem;
+  }
+  
+  .cs-target_card img {
+    height: 160px;
+  }
+  
+  .cs-key_card img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cs-target_card img {
+    height: 140px;
+  }
+  
+  .cs-key_card img {
+    height: 120px;
+  }
+}
