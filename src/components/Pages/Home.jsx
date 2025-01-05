@@ -340,8 +340,8 @@ export default function Home() {
           {/* Legal Compliance */}
           <Div className="col-lg-3 col-sm-6">
             <Div className={`cs-shadow_box_2 ${styles['cs-key_card']}`}>
-              <img src="/images/latest/home7.jpeg" alt="Legal Compliance" className="cs-icon" />
-              <h5 className="cs-font_20">Legal Compliance</h5>
+              <img src="/images/BusinessCompliance.jpg" alt="Business Compliance" className="cs-icon" />
+              <h5 className="cs-font_20">Business Compliance</h5>
               <p className="cs-font_16">
                 We offer registration, tax compliance, and legal advisory services to businesses and families.
               </p>

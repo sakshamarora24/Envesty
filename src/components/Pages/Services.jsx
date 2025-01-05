@@ -83,7 +83,7 @@ export default function DigitalMarketing() {
                     <Div className="col-lg-3 col-sm-6">
                         <div className="service-box cs-hover-effect">
                             <img src='/images/icons/service_icon_3.svg' alt="Influencer Marketing" />
-                            <h4>Legal Compliance</h4>
+                            <h4>Business Compliance</h4>
                             <p>Simplified compliance solutions for MSMEs and startups, covering taxation, registrations, and filings. Partnerships with experienced lawyers for end-to-end legal support.</p>
                         </div>
                     </Div>

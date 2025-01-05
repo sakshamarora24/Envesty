@@ -21,7 +21,7 @@ export default function AboutPage() {
       //factNumber: '65',
     },
     {
-      title: 'Legal Compliance Services\n',
+      title: 'Business Compliance Services\n',
       //factNumber: '20',
     },
     {
