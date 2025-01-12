@@ -298,11 +298,11 @@ Targeting Gen-Z innovators with mentorship and business advisory to help them bu
         <Div className="cs-side_header_in">
           <Div className="cs-side_header_shape" />
           <Link className="cs-site_branding" to="/">
-            <img src="/images/logo_only.png" className={`${styles.logo} ${isSticky ? styles.sticky : ''}`} alt="Logo" />
+            <img src="/images/latest/image.png" className={`${styles.logo} ${isSticky ? styles.sticky : ''}`} alt="Logo" />
           </Link>
           <Div className="cs-side_header_box">
             <h2 className="cs-side_header_heading">
-              Do you have a project in your <br /> mind? Keep connect us.
+              Do you have a project in your <br /> mind? Connect with us.
             </h2>
           </Div>
           <Div className="cs-side_header_box">
@@ -310,7 +310,7 @@ Targeting Gen-Z innovators with mentorship and business advisory to help them bu
           </Div>
           <Div className="cs-side_header_box">
             <Newsletter
-              title="Subscribe"
+              title="Book A Free Consultation"
               // subtitle="At vero eos et accusamus et iusto odio as part dignissimos ducimus qui blandit."
               placeholder="example@gmail.com"
             />

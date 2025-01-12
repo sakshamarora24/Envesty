@@ -163,7 +163,7 @@ export default function Home() {
                   <Card
                     title="Business Compliance"
                     link="/service/service-details"
-                    src="/images/latest/pexels-rdne-7821937.jpg"
+                    src="/images/demo/The Importance Of Reconciling Your Accounts 1️⃣….jpeg"
                     alt="Service"
                   />
                   <Spacing lg="0" md="30" />
@@ -366,6 +366,17 @@ export default function Home() {
               <h5 className="cs-font_20">Community Building</h5>
               <p className="cs-font_16">
                 Creating a platform for networking and knowledge sharing within the startup and family ecosystem.
+              </p>
+            </Div>
+          </Div>
+
+          {/* Legal Consultancy */}
+          <Div className="col-lg-3 col-sm-6">
+            <Div className={`cs-shadow_box_2 ${styles['cs-key_card']}`}>
+              <img src="/images/demo/legal.jpeg" alt="Legal Consultancy" className="cs-icon" />
+              <h5 className="cs-font_20">Legal Consultancy</h5>
+              <p className="cs-font_16">
+                We help families and businesses work efficiently by advising them in all legal matters.
               </p>
             </Div>
           </Div>

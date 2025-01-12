@@ -72,7 +72,7 @@ export default function AboutPage() {
             <Div className="cs-image_layer cs-style1">
               <Div className="cs-image_layer_in">
                 <img
-                    src="/images//latest/About1.jpeg"
+                    src="/images/demo/🔍 Is Your Business Ready for an Audit_ Knowing….jpeg"
                     alt="About"
                     className="w-100 cs-radius_15"
                 />
