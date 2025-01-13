@@ -5,19 +5,16 @@ import MenuWidget from '../Widget/MenuWidget'
 import Newsletter from '../Widget/Newsletter'
 // import SocialWidget from '../Widget/SocialWidget'
 import TextWidget from '../Widget/TextWidget'
+// import { Link } from 'react-router-dom'
 import './footer.scss'
 
 export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
-  // const copyrightLinks = [
-  //   {
-  //     title: 'Terms of Use',
-  //     href: '/'
-  //   },
-  //   {
-  //     title: 'Privacy Policy',
-  //     href: '/'
-  //   }
-  // ]
+  const copyrightLinks = [
+    {
+      title: 'Privacy Policy',
+      href: '/privacy-policy'
+    }
+  ]
 
   const serviceMenu = [
     {
@@ -32,7 +29,6 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
       title: 'Contact Us',
       href: '/contact'
     },
-
   ]
 
   return (
@@ -47,8 +43,16 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
                   logoAlt='Logo'
                   logoStyle={{ height: 'auto'}}  // Adjust the height as needed
                 />
-
-                {/* <SocialWidget /> */}
+              </Div>
+            </Div>
+            <Div className="col-lg-3 col-sm-6">
+              <Div className="cs-footer_item">
+                <ContactInfoWidget 
+                  title="Contact Us"
+                  email="support@envesty.in"
+                  phone="+91 7086975636"
+                  address="Bangalore, India"
+                />
               </Div>
             </Div>
             <Div className="col-lg-3 col-sm-6">
@@ -58,14 +62,8 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
             </Div>
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
-                <ContactInfoWidget title='Contact Us' />
-              </Div>
-            </Div>
-            <Div className="col-lg-3 col-sm-6">
-              <Div className="cs-footer_item">
                 <Newsletter
                   title='Book a Free Consultation'
-                  // subtitle='At vero eos et accusamus et iusto odio as part dignissimos ducimus qui blandit.'
                   placeholder='example@gmail.com'
                 />
               </Div>
@@ -76,11 +74,11 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
       <Div className="container">
         <Div className="cs-bottom_footer">
           <Div className="cs-bottom_footer_left">
-            <Div className="cs-copyright">Copyright © 2024 Envesty.</Div>
+            <Div className="cs-copyright">Copyright 2024 Envesty.</Div>
           </Div>
-          {/* <Div className="cs-bottom_footer_right">
-            <MenuWidget menuItems={copyrightLinks} variant=' cs-style2' />
-          </Div> */}
+          <Div className="cs-bottom_footer_right">
+            <MenuWidget menuItems={copyrightLinks} variant='cs-style2'/>
+          </Div>
         </Div>
       </Div>
     </footer>

@@ -38,6 +38,7 @@ import DigitalMarketing from './components/Pages/Services';
 // import WebDesignBlog from './components/Pages/WebDesignBlogs';
 // import SeoBlog from './components/Pages/SeoGuideBlog';
 // import AppDevelopmentBlog from './components/Pages/AppDevelopmentBlog';
+import PrivacyPolicyPage from './components/Pages/PrivacyPolicyPage';
 
 
 
@@ -132,6 +133,7 @@ function App() {
             element={<CaseStudyDetailsPage />}
           /> */}
           {/* <Route path="faq" element={<FaqPage />} /> */}
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Route>
 
         <Route path="*" element={<ErrorPage />} />
