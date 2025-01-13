@@ -47,28 +47,19 @@ export default function AboutPage() {
       <Spacing lg="100" md="80" />
       <Div className="container">
         <Div className="row">
-          <Div className="col-xl-5 offset-xl-1 col-lg-6">
+          <Div className="col-xl-5 col-lg-6">
             <SectionHeading
                 title="Your trusted partner for Financial and Legal Services"
-                subtitle="About Our Company"
-            >
-              <Spacing lg="30" md="20" />
+                subtitle="About Our Company">
               <p className="cs-m0">
-                At Envesty Solutions, we believe in empowering families, startups, and small businesses
-                by bridging the gaps in financial literacy, skill development, and legal compliance.
-                Our mission is to create a sustainable future for our clients by providing holistic
-                solutions tailored to their unique needs.
-              </p>
-              <Spacing lg="15" md="15" />
-              <p className="cs-m0">
-                Our team’s vast experience allows us to provide not only clear financial strategies but also personalized solutions that help you achieve long-term financial stability. Whether it's guiding families on how to plan for their children's education or helping MSMEs optimize their finances, our experts use a data-driven approach to ensure the best possible outcomes.
+                At Envesty Solutions, we empower families, startups, and small businesses by bridging gaps in financial literacy, skill development, and legal compliance. With a mission to create sustainable futures, we provide tailored, data-driven solutions that foster long-term financial stability. From guiding families in education planning to helping MSMEs optimize finances, our experienced team delivers clear strategies and personalized support for the best outcomes.
               </p>
               <Spacing lg="30" md="30" />
               <Div className="cs-separator cs-accent_bg"></Div>
               <Spacing lg="25" md="0" />
             </SectionHeading>
           </Div>
-          <Div className="col-xl-5 col-lg-6">
+          <Div className="col-xl-5 offset-xl-1 col-lg-6">
             <Div className="cs-image_layer cs-style1">
               <Div className="cs-image_layer_in">
                 <img

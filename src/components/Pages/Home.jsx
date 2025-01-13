@@ -248,8 +248,8 @@ export default function Home() {
             <Div className="cs-shadow_box_1 p-4">
               <h3 className="cs-font_40 cs-m0">Mission</h3>
               <p className="cs-font_16">
-                Help families plan financially to secure their children’s education and future skill development.
-                Provide MSMEs and startups with simplified solutions for compliance, financial planning, and mentorship.
+                We strive to bridge the gap between global opportunities and local talent, ensuring that every individual and small business has the tools,
+                knowledge, and mentorship they need to achieve financial stability, grow sustainably, and realize their dreams.
               </p>
             </Div>
           </Div>
@@ -271,7 +271,7 @@ export default function Home() {
           {/* Families */}
           <Div className="col-lg-4">
             <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
-              <img src="/images/latest/target1.jpeg" alt="Families" className="cs-icon" />
+              <img src="/images/demo/“My Mom Has ADHD__ Stories of Growing Up with an ADD Mother.jpeg" alt="Families" className="cs-icon" />
               <h4 className="cs-font_30">Families</h4>
               <p className="cs-font_16">
                 Focused on financial literacy, long-term planning, and guidance for children’s skill acquisition.
@@ -282,7 +282,7 @@ export default function Home() {
           {/* Startups & MSMEs */}
           <Div className="col-lg-4">
             <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
-              <img src="/images/latest/target2.jpeg" alt="Startups & MSMEs" className="cs-icon" />
+              <img src="/images/demo/Supermarket.jpeg" alt="Startups & MSMEs" className="cs-icon" />
               <h4 className="cs-font_30">Startups & MSMEs</h4>
               <p className="cs-font_16">
                 Supporting legal compliance, financial advisory, and mentorship to help them scale and succeed.
@@ -293,7 +293,7 @@ export default function Home() {
           {/* Young Entrepreneurs */}
           <Div className="col-lg-4">
             <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
-              <img src="/images/latest/target3.jpeg" alt="Young Entrepreneurs" className="cs-icon" />
+              <img src="/images/demo/Sprint%20Start%20Up%20Illustrations%20-%20Illustrations.jpeg" alt="Young Entrepreneurs" className="cs-icon" />
               <h4 className="cs-font_30">Young Entrepreneurs</h4>
               <p className="cs-font_16">
                 Targeting Gen-Z innovators with mentorship and business advisory to help them build successful ventures.
