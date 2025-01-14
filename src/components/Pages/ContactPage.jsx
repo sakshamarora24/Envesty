@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import emailjs from 'emailjs-com'; // Import EmailJS
 import { pageTitle } from '../../helper';
 import Div from '../Div';
 import PageHeading from '../PageHeading';
@@ -12,6 +13,60 @@ export default function ContactPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    projectType: '',
+    mobile: '',
+    projectDescription: '',
+  });
+
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    emailjs
+      .send(
+        'service_1pc4xuw', // Replace with your EmailJS Service ID
+        'template_kpp8bib', // Replace with your EmailJS Template ID
+        {
+          from_name: formData.fullName,
+          email: formData.email,
+          project_type: formData.projectType,
+          mobile: formData.mobile,
+          project_description: formData.projectDescription,
+        },
+        'iWcw8c7049mjhgh4X' // Replace with your EmailJS User ID (public key)
+      )
+      .then(
+        (response) => {
+          setStatus('Message sent successfully!');
+          setFormData({
+            fullName: '',
+            email: '',
+            projectType: '',
+            mobile: '',
+            projectDescription: '',
+          });
+        },
+        (error) => {
+          setStatus('Failed to send message. Please try again later.');
+          console.error('EmailJS error:', error);
+        }
+      );
+  };
+
   return (
     <>
       <PageHeading
@@ -32,43 +87,77 @@ export default function ContactPage() {
             <Spacing lg="0" md="50" />
           </Div>
           <Div className="col-lg-6">
-            <form action="#" className="row">
+            <form onSubmit={sendEmail} className="row">
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Full Name*</label>
-                <input type="text" className="cs-form_field" />
+                <input
+                  type="text"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Email*</label>
-                <input type="text" className="cs-form_field" />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Project Type*</label>
-                <input type="text" className="cs-form_field" />
+                <input
+                  type="text"
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Mobile*</label>
-                <input type="text" className="cs-form_field" />
+                <input
+                  type="text"
+                  name="mobile"
+                  value={formData.mobile}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-12">
                 <label className="cs-primary_color">Project Description*</label>
                 <textarea
+                  name="projectDescription"
                   cols="30"
                   rows="7"
+                  value={formData.projectDescription}
+                  onChange={handleChange}
                   className="cs-form_field"
+                  required
                 ></textarea>
                 <Spacing lg="25" md="25" />
               </Div>
               <Div className="col-sm-12">
-                <button className="cs-btn cs-style1">
+                <button type="submit" className="cs-btn cs-style1">
                   <span>Send Message</span>
                   <Icon icon="bi:arrow-right" />
                 </button>
               </Div>
             </form>
+            <Spacing lg="20" md="20" />
+            {status && <p>{status}</p>}
           </Div>
         </Div>
       </Div>
@@ -79,7 +168,6 @@ export default function ContactPage() {
           allowFullScreen
           title="Google Map"
         ></iframe>
-
       </Div>
       <Spacing lg="50" md="40" />
     </>

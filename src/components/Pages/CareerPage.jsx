@@ -1,17 +1,74 @@
 import { Icon } from '@iconify/react';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import emailjs from 'emailjs-com';
 import { pageTitle } from '../../helper';
 import Div from '../Div';
 import PageHeading from '../PageHeading';
 import SectionHeading from '../SectionHeading';
 import Spacing from '../Spacing';
-// import ContactInfoWidget from '../Widget/ContactInfoWidget';
 
 export default function CareersPage() {
   pageTitle('Careers');
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    areaOfInterest: '',
+    profile: '',
+    coverLetter: '',
+  });
+
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const sendApplication = (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    emailjs
+      .send(
+        'service_1pc4xuw', // Replace with your EmailJS Service ID
+        'template_11s5rr2', // Replace with your EmailJS Template ID
+        {
+          full_name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          area_of_interest: formData.areaOfInterest,
+          profile: formData.profile,
+          cover_letter: formData.coverLetter,
+        },
+        'iWcw8c7049mjhgh4X' // Replace with your EmailJS User ID (public key)
+      )
+      .then(
+        (response) => {
+          setStatus('Application submitted successfully!');
+          setFormData({
+            fullName: '',
+            email: '',
+            phone: '',
+            areaOfInterest: '',
+            profile: '',
+            coverLetter: '',
+          });
+        },
+        (error) => {
+          setStatus('Failed to submit the application. Please try again.');
+          console.error('EmailJS error:', error);
+        }
+      );
+  };
+
   return (
     <>
       <PageHeading
@@ -67,49 +124,90 @@ export default function CareersPage() {
             <SectionHeading title="Apply Now" subtitle="Send Your Resume" />
             <Spacing lg="55" md="30" />
 
-            <form action="#" className="row">
+            <form onSubmit={sendApplication} className="row">
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Full Name*</label>
-                <input type="text" className="cs-form_field" />
+                <input
+                  type="text"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Email*</label>
-                <input type="email" className="cs-form_field" />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Phone*</label>
-                <input type="text" className="cs-form_field" />
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Area Of Interest*</label>
-                <input type="text" className="cs-form_field" />
+                <input
+                  type="text"
+                  name="areaOfInterest"
+                  value={formData.areaOfInterest}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
                 <label className="cs-primary_color">Profile*</label>
-                <input type="text" placeholder="Intern or Part-Time" className="cs-form_field" />
+                <input
+                  type="text"
+                  name="profile"
+                  placeholder="Intern or Part-Time"
+                  value={formData.profile}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
+                />
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-12">
                 <label className="cs-primary_color">Cover Letter*</label>
                 <textarea
+                  name="coverLetter"
                   cols="30"
                   rows="7"
-                  className="cs-form_field"
                   placeholder="Tell us why you'd be a great fit!"
+                  value={formData.coverLetter}
+                  onChange={handleChange}
+                  className="cs-form_field"
+                  required
                 ></textarea>
                 <Spacing lg="25" md="25" />
               </Div>
               <Div className="col-sm-12">
-                <button className="cs-btn cs-style1">
+                <button type="submit" className="cs-btn cs-style1">
                   <span>Submit Application</span>
                   <Icon icon="bi:arrow-right" />
                 </button>
               </Div>
             </form>
+            {status && <p>{status}</p>}
           </Div>
         </Div>
       </Div>

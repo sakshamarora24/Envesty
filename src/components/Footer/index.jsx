@@ -64,7 +64,7 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
               <Div className="cs-footer_item">
                 <Newsletter
                   title='Book a Free Consultation'
-                  placeholder='example@gmail.com'
+                  placeholder='abc@gmail.com'
                 />
               </Div>
             </Div>
