@@ -90,7 +90,7 @@ export default function Home() {
 
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % showcaseData.length);
-    }, 3000); // Change slide every 5 seconds
+    }, 6000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
   }, [showcaseData.length]);
