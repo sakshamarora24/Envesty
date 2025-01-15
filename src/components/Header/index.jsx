@@ -6,7 +6,7 @@ import './header.scss';
 import ContactInfoWidget from '../Widget/ContactInfoWidget';
 import Div from '../Div';
 // import DropDown from './DropDown';
-import styles from './Header.module.css';
+// import styles from './Header.module.css';
 
 export default function Header({ variant }) {
   const [isSticky, setIsSticky] = useState(false);
@@ -33,7 +33,11 @@ export default function Header({ variant }) {
             <Div className="cs-main_header_in">
               <Div className="cs-main_header_left">
                 <Link className="cs-site_branding" to="/">
-                  <img src="/images/latest/image.png" alt="Logo" style={{ width: 'max-content', height: 'max-content' }} />
+                  <img 
+                    src="/images/latest/image.png" 
+                    alt="Logo" 
+                    className="cs-site_logo"
+                  />
                 </Link>
 
               </Div>
@@ -298,7 +302,11 @@ Targeting Gen-Z innovators with mentorship and business advisory to help them bu
         <Div className="cs-side_header_in">
           <Div className="cs-side_header_shape" />
           <Link className="cs-site_branding" to="/">
-            <img src="/images/latest/image.png" className={`${styles.logo} ${isSticky ? styles.sticky : ''}`} alt="Logo" />
+            <img 
+              src="/images/latest/image.png" 
+              alt="Logo" 
+              className="cs-site_logo"
+            />
           </Link>
           <Div className="cs-side_header_box">
             <h2 className="cs-side_header_heading">
