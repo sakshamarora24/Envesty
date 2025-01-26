@@ -58,19 +58,33 @@
 .cs-social_btns.cs-style1 {
   display: flex;
   flex-wrap: wrap;
-  margin: -7px;
+  margin: 20px -7px 0;
+  justify-content: flex-start;
   a {
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     border: 2px solid $white;
     margin: 7px;
     color: $white;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      transition: all 0.3s ease;
+    }
+    
     &:hover {
       border-color: $accent;
-      transform: scale(1.08);
+      background-color: $accent;
+      transform: translateY(-3px);
+      
       svg {
-        fill: $accent;
+        fill: $white;
       }
     }
   }

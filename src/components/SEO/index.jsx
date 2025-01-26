@@ -5,7 +5,7 @@ const SEO = ({
   title, 
   description, 
   keywords,
-  image = '/images/og-image.jpg',
+  image = '/images/latest/image.png',
   url = 'https://envesty.com'
 }) => {
   const siteTitle = `${title} | Envesty - Financial Planning and Wealth Management`;
@@ -38,7 +38,7 @@ const SEO = ({
             "@type": "Organization",
             "name": "Envesty",
             "url": "https://envesty.com",
-            "logo": "https://envesty.com/images/logo.png",
+            "logo": "/images/latest/image.png",
             "description": "${description}",
             "address": {
               "@type": "PostalAddress",

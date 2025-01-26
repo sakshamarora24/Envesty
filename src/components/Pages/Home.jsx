@@ -152,7 +152,7 @@ export default function Home() {
                 <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
                 <Div className="col-lg-3 col-sm-6">
                   <Card
-                    title="Financial Compliance"
+                    title="Financial Planning"
                     link="/service/service-details"
                     src="/images/latest/pexels-shkrabaanthony-5816298.jpg"
                     alt="Service"
@@ -238,7 +238,7 @@ export default function Home() {
               <h3 className="cs-font_40 cs-m0">Vision</h3>
               <p className="cs-font_16">
                 To empower families, MSMEs, and startups in Tier 2 and Tier 3 cities with financial literacy,
-                skill development, mentorship, and legal compliance.
+                skill development, mentorship, and business compliance.
               </p>
             </Div>
           </Div>
@@ -285,7 +285,7 @@ export default function Home() {
               <img src="/images/demo/Supermarket.jpeg" alt="Startups & MSMEs" className="cs-icon" />
               <h4 className="cs-font_30">Startups & MSMEs</h4>
               <p className="cs-font_16">
-                Supporting legal compliance, financial advisory, and mentorship to help them scale and succeed.
+                Supporting business compliance, financial advisory, and mentorship to help them scale and succeed.
               </p>
             </Div>
           </Div>

@@ -3,7 +3,7 @@ import Div from '../Div'
 import ContactInfoWidget from '../Widget/ContactInfoWidget'
 import MenuWidget from '../Widget/MenuWidget'
 import Newsletter from '../Widget/Newsletter'
-// import SocialWidget from '../Widget/SocialWidget'
+import SocialWidget from '../Widget/SocialWidget'
 import TextWidget from '../Widget/TextWidget'
 // import { Link } from 'react-router-dom'
 import './footer.scss'
@@ -41,7 +41,7 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
                 <TextWidget
                   logoSrc='/images/latest/image.png'
                   logoAlt='Logo'
-                  logoStyle={{ height: 'auto'}}  // Adjust the height as needed
+                  logoStyle={{ height: 'auto'}}
                 />
               </Div>
             </Div>
@@ -66,6 +66,7 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
                   title='Book a Free Consultation'
                   placeholder='abc@gmail.com'
                 />
+                <SocialWidget />
               </Div>
             </Div>
           </Div>

@@ -52,7 +52,7 @@ export default function AboutPage() {
                 title="Your trusted partner for Financial and Legal Services"
                 subtitle="About Our Company">
               <p className="cs-m0">
-                At Envesty Solutions, we empower families, startups, and small businesses by bridging gaps in financial literacy, skill development, and legal compliance. With a mission to create sustainable futures, we provide tailored, data-driven solutions that foster long-term financial stability. From guiding families in education planning to helping MSMEs optimize finances, our experienced team delivers clear strategies and personalized support for the best outcomes.
+                At Envesty Solutions, we empower families, startups, and small businesses by bridging gaps in financial literacy, skill development, and business compliance. With a mission to create sustainable futures, we provide tailored, data-driven solutions that foster long-term financial stability. From guiding families in education planning to helping MSMEs optimize finances, our experienced team delivers clear strategies and personalized support for the best outcomes.
               </p>
               <Spacing lg="30" md="30" />
               <Div className="cs-separator cs-accent_bg"></Div>
