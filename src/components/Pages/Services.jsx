@@ -1,124 +1,239 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { pageTitle } from '../../helper'
-import Accordion from '../Accordion'
-// import IconBox from '../IconBox'
-import PageHeading from '../PageHeading'
-import Div from '../Div'
-import SectionHeading from '../SectionHeading'
-// import TestimonialSlider from '../Slider/TestimonialSlider'
-import Spacing from '../Spacing'
+import React from 'react';
+import { pageTitle } from '../../helper';
+import PageHeading from '../PageHeading';
+import Div from '../Div';
+import Spacing from '../Spacing';
+import './Services.css';
 
-export default function DigitalMarketing() {
-    pageTitle('Services');
-    const params = useParams();
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
-    return (
-        <>
-            <PageHeading
-                title='Our Services'
-                bgSrc='/images/hero_bg_3.jpeg'
-                pageLinkText={params.serviceDetailsId}
-            />
-            {/*<Spacing lg='145' md='80' />*/}
-            {/*<Div className="container">*/}
-            {/*    <SectionHeading*/}
-            {/*        title='Design working process'*/}
-            {/*        subtitle=''*/}
-            {/*        variant='cs-style1 text-center'*/}
-            {/*    />*/}
-            {/*    <Spacing lg='90' md='45' />*/}
-            {/*    <Div className="row">*/}
-            {/*        <Div className="col-lg-4">*/}
-            {/*            <IconBox*/}
-            {/*                icon='/images/icons/service_icon_1.svg'*/}
-            {/*                title='Search Engine Optimization (SEO)'*/}
-            {/*                subtitle='Enhance your online visibility and organic search rankings with our SEO services.'*/}
-            {/*            />*/}
-            {/*            <Spacing lg='30' md='30' />*/}
-            {/*        </Div>*/}
-            {/*        <Div className="col-lg-4">*/}
-            {/*            <IconBox*/}
-            {/*                icon='/images/icons/service_icon_2.svg'*/}
-            {/*                title='Content Marketing'*/}
-            {/*                subtitle='Craft compelling content to resonate with your target audience. We help tell your brand story effectively.'*/}
-            {/*            />*/}
-            {/*            <Spacing lg='30' md='30' />*/}
-            {/*        </Div>*/}
-            {/*        <Div className="col-lg-4">*/}
-            {/*            <IconBox*/}
-            {/*                icon='/images/icons/service_icon_3.svg'*/}
-            {/*                title='Social Media Marketing'*/}
-            {/*                subtitle='Engage with your audience through tailored social media strategies to drive conversions.'*/}
-            {/*            />*/}
-            {/*            <Spacing lg='30' md='30' />*/}
-            {/*        </Div>*/}
-            {/*    </Div>*/}
-            {/*</Div>*/}
+export default function Services() {
+  pageTitle('Services');
 
-            {/* New Section with Moving Service Boxes */}
-            <Spacing lg='120' md='50' />
-            <Div className="container">
-                <SectionHeading title="Our Services" subtitle="" />
-                <Spacing lg='55' md='30' />
-                <Div className="row service-boxes">
-                    <Div className="col-lg-3 col-sm-6">
-                        <div className="service-box cs-hover-effect">
-                            <img src='/images/icons/service_icon_1.svg' alt="PPC" />
-                            <h4>Financial Advisory
-                            </h4>
-                            <p>Personalized financial planning to help families achieve goals without debt. Collaborations with certified financial advisors to provide expert guidance.
-                            </p>
-                        </div>
-                    </Div>
-                    <Div className="col-lg-3 col-sm-6">
-                        <div className="service-box cs-hover-effect">
-                            <img src='/images/icons/service_icon_2.svg' alt="Email Marketing" />
-                            <h4>Skill Development COnsultancy</h4>
-                            <p>Partnering with ed-tech platforms  to deliver cutting-edge skills. Offering curated resources for trending fields like AI, digital marketing, and entrepreneurship.</p>
-                        </div>
-                    </Div>
-                    <Div className="col-lg-3 col-sm-6">
-                        <div className="service-box cs-hover-effect">
-                            <img src='/images/icons/service_icon_3.svg' alt="Influencer Marketing" />
-                            <h4>Business Compliance</h4>
-                            <p>Simplified compliance solutions for MSMEs and startups, covering taxation, registrations, and filings. Partnerships with experienced lawyers for end-to-end legal support.</p>
-                        </div>
-                    </Div>
-                    <Div className="col-lg-3 col-sm-6">
-                        <div className="service-box cs-hover-effect">
-                            <img src='/images/icons/service_icon_1.svg' alt="Video Marketing" />
-                            <h4>Mentorship Programs</h4>
-                            <p>Connecting individuals and businesses with seasoned mentors for guidance and growth. Hosting group mentorship sessions and workshops to inspire innovation.</p>
-                        </div>
-                    </Div>
-                </Div>
+  const servicesData = [
+    {
+      id: "virtual-cofounder",
+      title: "Virtual Co-Founder Services",
+      subtitle: "For Startups, Entrepreneurs",
+      description: "Grow, Expand & Thrive with Expert Business Consulting",
+      services: [
+        {
+          title: "Business Model Design",
+          description: "Business Plan Templates for reusable and editable business plans to capitalize on market opportunity.",
+          icon: "/assets/icons/business-model.svg"
+        },
+        {
+          title: "Funding Solutions",
+          description: "Grant money, venture Capital, and seed money for Business growth.",
+          icon: "/assets/icons/funding.svg"
+        },
+        {
+          title: "Market Entry Strategy",
+          description: "Leveraging competition and market information for successful Market entry.",
+          icon: "/assets/icons/market-entry.svg"
+        },
+        {
+          title: "Legal & Regulatory Compliance",
+          description: "Legal advisory services for startups & Businesses.",
+          icon: "/assets/icons/legal.svg"
+        },
+        {
+          title: "Pitch Deck & Investor Readiness",
+          description: "Create pitch Decks Nicely prepared with great investor slides to attract Funding.",
+          icon: "/assets/icons/pitch-deck.svg"
+        },
+        {
+          title: "Networking & Business Growth",
+          description: "Make connections with incubators, industry entrepreneurs, Investors and sources of money.",
+          icon: "/assets/icons/networking.svg"
+        }
+      ],
+      cta: "Begin your career on the right path! Call us today."
+    },
+    {
+      id: "digital-transformation",
+      title: "Digital Transformation",
+      subtitle: "Rebooting Business by Technology",
+      description: "Maximize Your Web Potential & Business Growth",
+      services: [
+        {
+          title: "Web Development Solutions",
+          description: "Custom web development, e-commerce web development, CMS integration, and mobile web development.",
+          icon: "/assets/icons/web-dev.svg"
+        },
+        {
+          title: "Digital Marketing Solutions",
+          description: "Search engine marketing, pay-per-click, social media marketing, and email marketing.",
+          icon: "/assets/icons/digital-marketing.svg"
+        },
+        {
+          title: "Branding & Design",
+          description: "Logo design, brand identity, visual identity, and marketing material.",
+          icon: "/assets/icons/branding.svg"
+        },
+        {
+          title: "Other Digital Solutions",
+          description: "Mobile application development, UI/UX, video production, and analytics.",
+          icon: "/assets/icons/digital-solutions.svg"
+        }
+      ],
+      cta: "Bring it to the next level with our revamped web development and marketing solutions!"
+    },
+    {
+      id: "legal-consultancy",
+      title: "Legal Consultancy",
+      subtitle: "For Start-up & Businesses",
+      description: "Legal Solutions to Protect Your Business",
+      services: [
+        {
+          title: "Startups & MSME Compliance",
+          description: "Udyam, GEM, and Startup India scheme registration.",
+          icon: "/assets/icons/msme.svg"
+        },
+        {
+          title: "Corporate Legal Advisory",
+          description: "Drafting of MOU, draft share agreement, and draft vendor agreement.",
+          icon: "/assets/icons/corporate-legal.svg"
+        },
+        {
+          title: "Tax Advisory & Compliance",
+          description: "Drafting of GST return and TDS return, income tax compliances.",
+          icon: "/assets/icons/tax.svg"
+        },
+        {
+          title: "Intellectual Property Management",
+          description: "Trademark registration, copyright registration, and patent registration.",
+          icon: "/assets/icons/ip.svg"
+        },
+        {
+          title: "Legal Training & Workshops",
+          description: "Business update training free of law.",
+          icon: "/assets/icons/legal-training.svg"
+        }
+      ],
+      cta: "Secure your business with safe legal advisory and compliance consultancy."
+    },
+    {
+      id: "business-consultancy",
+      title: "Business Consultancy",
+      subtitle: "Business & Financial Optimization",
+      description: "Success of Business with Strategic Consultancy",
+      services: [
+        {
+          title: "Debt Advisory & Restructuring",
+          description: "Optimize credit health and funding planning.",
+          icon: "/assets/icons/debt.svg"
+        },
+        {
+          title: "Funding Consultation",
+          description: "Debt, equity, grant, and NBFC funding.",
+          icon: "/assets/icons/funding-consultation.svg"
+        },
+        {
+          title: "Business Incorporation Services",
+          description: "Private Ltd., LLP, OPC, or proprietorship firm registration.",
+          icon: "/assets/icons/incorporation.svg"
+        },
+        {
+          title: "Accounting & Financial Planning",
+          description: "Accounting outsourcing, cost saving, and valuation reports.",
+          icon: "/assets/icons/accounting.svg"
+        },
+        {
+          title: "Market Growth & Operating Plan",
+          description: "Formulates business growth during the first phase in MSM.",
+          icon: "/assets/icons/market-growth.svg"
+        }
+      ],
+      cta: "Business development consultancy professionalism and financial worthiness."
+    },
+    {
+      id: "personal-finance",
+      title: "Personal Finance & Counselling",
+      subtitle: "Financial Wellness for a Better Tomorrow",
+      description: "Genius Budgeting for a Thriving Future",
+      services: [
+        {
+          title: "Investment Planning",
+          description: "Let money grow by investing in shares, mutual funds, bonds and other alternative investments.",
+          icon: "/assets/icons/investment.svg"
+        },
+        {
+          title: "Tax Planning & Optimization",
+          description: "Save tax outgo through intelligent financial planning.",
+          icon: "/assets/icons/tax-planning.svg"
+        },
+        {
+          title: "Retirement & Wealth Planning",
+          description: "Plan wealth and financial independence with assured investment.",
+          icon: "/assets/icons/retirement.svg"
+        },
+        {
+          title: "Personal Debt Management",
+          description: "Professional solution for availing loan, credit and loan repayment management.",
+          icon: "/assets/icons/personal-debt.svg"
+        },
+        {
+          title: "Emergency Fund Planning",
+          description: "Plan emergency outgo through intelligent financial contingency plans.",
+          icon: "/assets/icons/emergency-fund.svg"
+        }
+      ],
+      cta: "Take control of your financial future with our expert guidance."
+    }
+  ];
+
+  return (
+    <>
+      <PageHeading
+        title="Our Services"
+        bgSrc="/images/portfolio_hero_bg.jpeg"
+        pageLinkText="Services"
+      />
+      <Spacing lg="150" md="80" />
+      <Div className="container">
+        {servicesData.map((service, index) => (
+          <Div key={service.id} id={service.id} className="serviceSection">
+            <Div className="serviceHeader">
+              <div className="serviceTitleWrapper">
+                <h2 className="serviceTitle">{service.title}</h2>
+              </div>
+              <h3 className="serviceSubtitle">{service.subtitle}</h3>
+              <div className="serviceDescriptionWrapper">
+                <span className="serviceLine"></span>
+                <p className="serviceDescription">{service.description}</p>
+                <span className="serviceLine"></span>
+              </div>
             </Div>
-
-            <Spacing lg='200' md='80' />
-            {/*<TestimonialSlider />*/}
-            {/*<Spacing lg='145' md='80' />*/}
-            <Div className="container cs-shape_wrap_4">
-                <Div className="cs-shape_4"></Div>
-                <Div className="cs-shape_4"></Div>
-                <Div className="container">
-                    <Div className="row">
-                        <Div className="col-xl-5 col-lg-6">
-                            <SectionHeading
-                                title='Some Frequently Asked Questions and Answers'
-                                subtitle=''
-                            />
-                            <Spacing lg='90' md='45' />
-                        </Div>
-                        <Div className="col-lg-6 offset-xl-1">
-                            <Accordion />
-                        </Div>
-                    </Div>
-                    <Spacing lg='200' md='45' />
+            <Div className="serviceGrid">
+              {service.services.map((item, i) => (
+                <Div key={i} className="serviceCard">
+                  <div className="serviceCardInner">
+                    <div className="serviceCardHeader">
+                      <h4 className="serviceItemTitle">{item.title}</h4>
+                    </div>
+                    <div className="serviceCardContent">
+                      <p className="serviceItemDescription">{item.description}</p>
+                    </div>
+                    <div className="serviceCardIcon">
+                      <img 
+                        src={`/images/icons/service_icon_2.svg`} 
+                        alt={item.title}
+                      />
+                    </div>
+                  </div>
                 </Div>
+              ))}
             </Div>
-        </>
-    )
+            {index !== servicesData.length - 1 && (
+              <>
+                <Spacing lg="60" md="40"/>
+                <div className="sectionDivider"></div>
+                <Spacing lg="60" md="40"/>
+              </>
+            )}
+          </Div>
+        ))}
+      </Div>
+      <Spacing lg="120" md="50" />
+    </>
+  );
 }

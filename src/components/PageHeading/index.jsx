@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Div from '../Div';
+import './pageheading.css';
 
-export default function PageHeading({ title, bgSrc, pageLinkText }) {
+export default function PageHeading({ title, bgSrc, pageLinkText, overlay }) {
   return (
     <Div
-      className="cs-page_heading cs-style1 cs-center text-center cs-bg"
+      className={`cs-page_heading cs-style1 cs-center text-center cs-bg ${overlay ? 'cs-overlay' : ''}`}
       style={{ backgroundImage: `url(${bgSrc})` }}
     >
       <Div className="container">

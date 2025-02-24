@@ -1,46 +1,123 @@
 @import "../../scss/default/color_variable";
+
+.cs-fooer {
+  background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.98) 100%);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba($accent, 0.5), transparent);
+  }
+}
+
 .cs-fooer_main {
   padding: 95px 0 35px;
+  position: relative;
 }
 
 .cs-footer_item {
   margin-bottom: 40px;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
   .cs-newsletter.cs-style1 {
     margin-top: 6px;
   }
 }
 
 .cs-widget_title {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 35px;
+  position: relative;
+  padding-bottom: 15px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: $accent;
+  }
 }
 
 .cs-menu_widget.cs-style1 {
   padding: 0;
   margin: 0;
   list-style: none;
+  
   li {
     display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    
+    a {
+      position: relative;
+      padding-left: 0;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        padding-left: 10px;
+        color: $accent;
+      }
+      
+      &::before {
+        content: '→';
+        position: absolute;
+        left: -20px;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      
+      &:hover::before {
+        left: -10px;
+        opacity: 1;
+      }
+    }
+    
     span {
       font-size: 24px;
       flex: none;
       width: 35px;
     }
+    
     &:not(:last-child) {
       margin-bottom: 20px;
     }
   }
 }
+
 .cs-menu_widget.cs-style2 {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  
   li {
     &:not(:last-child) {
       &::after {
-        content: '|';
-        margin: 0 10px;
+        content: '•';
+        margin: 0 12px;
         position: relative;
         top: -1px;
+        color: $accent;
+      }
+    }
+    
+    a {
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: $accent;
       }
     }
   }
@@ -49,32 +126,44 @@
 .cs-text_widget {
   p {
     margin: 0;
+    line-height: 1.8;
+    opacity: 0.9;
   }
+  
+  img {
+    max-width: 160px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
   img + p {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 
 .cs-social_btns.cs-style1 {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px -7px 0;
+  margin: 25px -7px 0;
   justify-content: flex-start;
+  
   a {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    border: 2px solid $white;
+    border: 2px solid rgba($white, 0.2);
     margin: 7px;
     color: $white;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba($white, 0.05);
     
     svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       transition: all 0.3s ease;
     }
     
@@ -85,6 +174,7 @@
       
       svg {
         fill: $white;
+        transform: scale(1.1);
       }
     }
   }
@@ -94,19 +184,31 @@
   .cs-newsletter_form {
     position: relative;
   }
+  
   .cs-newsletter_input {
-    height: 50px;
+    height: 54px;
     width: 100%;
-    border-radius: 10px;
-    background-color: #000;
-    border: none;
-    padding: 5px 90px 5px 15px;
+    border-radius: 27px;
+    background-color: rgba($white, 0.05);
+    border: 1px solid rgba($white, 0.1);
+    padding: 5px 140px 5px 25px;
     outline: none;
     color: $white;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      border-color: rgba($accent, 0.5);
+      background-color: rgba($white, 0.08);
+    }
+    
+    &::placeholder {
+      color: rgba($white, 0.5);
+    }
   }
+  
   .cs-newsletter_btn {
-    padding: 7px 25px;
-    border-radius: 10px;
+    padding: 8px 30px;
+    border-radius: 25px;
     color: $white;
     background-color: $accent;
     position: absolute;
@@ -115,6 +217,8 @@
     font-weight: 600;
     border: none;
     overflow: hidden;
+    transition: all 0.3s ease;
+    
     &:before {
       content: "";
       position: absolute;
@@ -122,7 +226,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba($black, 0.4);
+      background: rgba($black, 0.15);
       transform: scaleX(0);
       transform-origin: 0 50%;
       transition-property: transform;
@@ -130,73 +234,96 @@
       transition-timing-function: ease-out;
       border-radius: inherit;
     }
+    
     span {
       position: relative;
       z-index: 1;
     }
+    
     &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba($accent, 0.3);
+      
       &:before {
         transform: scaleX(1);
         transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
       }
     }
   }
+  
   .cs-newsletter_text {
-    margin-top: 25px;
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
   }
 }
-
 
 .cs-bottom_footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px 0;
-  border-top: 1px solid $border;
+  padding: 25px 0;
+  border-top: 1px solid rgba($white, 0.1);
+  
   >* {
     padding: 4px 0;
   }
-}
-
-.cs-text_widget + .cs-social_btns.cs-style1 {
-  margin-top: 25px;
+  
+  .cs-copyright {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 @media screen and (max-width: 1199px) {
   .cs-newsletter.cs-style1 {
     .cs-newsletter_btn {
-      padding: 7px 15px;
+      padding: 8px 20px;
     }
     .cs-newsletter_input {
-      padding: 5px 80px 5px 15px;
+      padding: 5px 120px 5px 20px;
     }
   }
 }
+
 @media screen and (max-width: 991px) {
   .cs-widget_title {
     margin-bottom: 20px;
-}
-.cs-text_widget img + p {
-  margin-top: 20px;
-}
-.cs-menu_widget.cs-style1 li:not(:last-child) {
-  margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .cs-text_widget img + p {
+    margin-top: 15px;
+  }
+  
+  .cs-menu_widget.cs-style1 li:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  
+  .cs-text_widget + .cs-social_btns.cs-style1,
+  .cs-newsletter.cs-style1 .cs-newsletter_text {
+    margin-top: 15px;
+  }
+  
+  .cs-fooer_main {
+    padding: 70px 0 25px;
+  }
 }
 
-.cs-text_widget + .cs-social_btns.cs-style1,
-.cs-newsletter.cs-style1 .cs-newsletter_text {
-  margin-top: 15px;
-}
-.cs-fooer_main {
-  padding: 60px 0 15px;
-}
-}
 @media screen and (max-width: 767px) {
   .cs-bottom_footer {
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
+    
+    .cs-menu_widget.cs-style2 {
+      margin-top: 10px;
+    }
   }
 }
-@media screen and (max-width: 767px) {}
