@@ -1,0 +1,166 @@
+.careerSection {
+  padding: 4rem 0;
+  position: relative;
+  background: var(--cs-color_bg, #fff);
+}
+
+.jobListing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.jobCard {
+  background: var(--cs-color_bg, #ffffff);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.jobCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--cs-color_accent, #ff4e00);
+}
+
+.jobTitle {
+  font-size: 1.5rem;
+  color: var(--cs-color_heading, #333);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.jobDescription {
+  color: var(--cs-color_text, #666);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.jobMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cs-color_text, #555);
+  font-size: 0.95rem;
+}
+
+.jobIcon {
+  color: var(--cs-color_accent, #ff4e00);
+}
+
+.applicationForm {
+  background: var(--cs-color_bg, #ffffff);
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--cs-color_heading, #333);
+  font-size: 0.95rem;
+}
+
+.formField {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--cs-color_border, #e1e1e1);
+  border-radius: 8px;
+  background: var(--cs-color_bg_alt, #f8f9fa);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: var(--cs-color_text, #333);
+}
+
+.formField:focus {
+  outline: none;
+  border-color: var(--cs-color_accent, #ff4e00);
+  background: var(--cs-color_bg, #fff);
+  box-shadow: 0 0 0 3px rgba(255, 78, 0, 0.1);
+}
+
+.formField::placeholder {
+  color: var(--cs-color_text_light, #999);
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--cs-color_accent, #ff4e00);
+  color: var(--cs-color_bg, #fff);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 0.5rem;
+}
+
+.submitButton:hover {
+  background: var(--cs-color_accent_dark, #e64600);
+  transform: translateY(-2px);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.statusMessage {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.statusSuccess {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.statusError {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.statusPending {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+@media (max-width: 768px) {
+  .careerSection {
+    padding: 2rem 0;
+  }
+  
+  .applicationForm {
+    padding: 1.5rem;
+  }
+  
+  .jobListing {
+    grid-template-columns: 1fr;
+  }
+}

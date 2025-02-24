@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../Card';
-import FunFact from '../FunFact';
+// import InfoLine from '../InfoLine';
 import Hero from '../Hero';
 import Div from '../Div';
 import SectionHeading from '../SectionHeading';
 import Spacing from '../Spacing';
-// import PortfolioSlider from '../Slider/PortfolioSlider';
-
-// import TestimonialSlider from '../Slider/TestimonialSlider';
-
-// import TimelineSlider from '../Slider/TimelineSlider';
 import { pageTitle } from '../../helper';
+import styles from './Home.module.css';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import ConsultationForm from '../ConsultationForm/ConsultationForm';
 
 export default function Home() {
-
   const [currentSlide, setCurrentSlide] = useState(1);
+  const [showConsultation, setShowConsultation] = useState(false);
+  const [hasShownPopup, setHasShownPopup] = useState(false);
   pageTitle('Home');
 
   const showcaseData = [
     {
       title: 'Empower Your Business with Financial and <br> Legal Expertise',
-      bgImageUrl: '/images/hero_bg.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Master Financial Planning and Grow Your Wealth <br> with Confidence',
@@ -28,56 +27,19 @@ export default function Home() {
     },
     {
       title: 'Navigate Your Financial Future <br> with Tailored Advice',
-      bgImageUrl: '/images/slider_2.jpeg',
-    },
-    {
-      title: 'Creating a community of <br> Successful Startups',
-      bgImageUrl: '/images/slider_3.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Simplify Your Business Compliance <br> and Scale with Ease',
-      bgImageUrl: '/images/slider_4.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Develop the Skills You Need <br> to Succeed in the Modern Economy',
-      bgImageUrl: '/images/slider_5.jpeg',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
     {
       title: 'Unlock Your Entrepreneurial Potential and Build <br> a Thriving Business',
-      bgImageUrl: '/images/slider_7.jpeg',
-    },
-  ];
-
-
-  // Hero Social Links
-  // const heroSocialLinks = [
-  //   {
-  //     name: 'Instagram',
-  //     links: '/',
-  //   },
-  //   {
-  //     name: 'Twitter',
-  //     links: '/',
-  //   },
-  // ];
-
-  // FunFact Data
-  const funfaceData = [
-    {
-      title: 'Global Happy Clients',
-      factNumber: '40',
-    },
-    {
-      title: 'Project Completed',
-      factNumber: '50',
-    },
-    {
-      title: 'Team Members',
-      factNumber: '10',
-    },
-    {
-      title: 'Digital products',
-      factNumber: '2',
+      bgImageUrl: '/images/slider_1.jpeg',
     },
   ];
 
@@ -87,174 +49,209 @@ export default function Home() {
 
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % showcaseData.length);
-    }, 3000); // Change slide every 5 seconds
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [showcaseData.length]);
 
+  useEffect(() => {
+    // Show popup after 3 seconds if it hasn't been shown before
+    if (!hasShownPopup) {
+      const timer = setTimeout(() => {
+        setShowConsultation(true);
+        setHasShownPopup(true);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasShownPopup]);
+
   const currentShowcase = showcaseData[currentSlide];
 
-
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <>
-      {/* Start Hero Section */}
+      <ConsultationForm 
+        isOpen={showConsultation} 
+        onClose={() => setShowConsultation(false)} 
+      />
       <Hero
         title={currentShowcase.title}
-        // subtitle="We deliver best problem solving solution for our client and provide finest finishing product in present and upcoming future."
-        // btnText="Get a Quote"
+        // btnText="Book a Free Consultation"
         // btnLink="/contact"
+        // subtitle="Big4 Services at MSME Prices!"
         scrollDownId="#service"
-        socialLinksHeading="Follow Us"
-        // heroSocialLinks={heroSocialLinks}
         bgImageUrl={currentShowcase.bgImageUrl}
       />
-      {/* End Hero Section */}
 
-      {/* Start FunFact Section */}
-      <div className="container">
-        <FunFact
-          variant="cs-type1"
-          title={`"Empowering Dreams, Simplifying Success – Big4 Services at MSME Prices!"`}
-          subtitle=""
-          data={funfaceData}
-        />
-      </div>
-      {/* End FunFact Section */}
-
-      {/* Start Service Section */}
-      <Spacing lg="150" md="80" />
-      <Div id="service">
-        <Div className="container">
-          <Div className="row">
-            <Div className="col-xl-4">
-              <SectionHeading
-                title="Services we can help you with"
-                subtitle="What Can We Do"
-                btnText="See All Services"
-                btnLink="/services"
-              />
-              <Spacing lg="90" md="45" />
-            </Div>
-            <Div className="col-xl-8">
-              <Div className="row">
-                <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                <Div className="col-lg-3 col-sm-6">
-                  <Card
-                    title="Skill Development"
-                    link="/service/service-details"
-                    src="/images/service_1.jpeg"
-                    alt="Service"
-                  />
-                  <Spacing lg="0" md="30" />
-                </Div>
-                <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                <Div className="col-lg-3 col-sm-6">
-                  <Card
-                    title="Financial Compliance"
-                    link="/service/service-details"
-                    src="/images/latest/pexels-shkrabaanthony-5816298.jpg"
-                    alt="Service"
-                  />
-                  <Spacing lg="0" md="30" />
-                </Div>
-                <Div className="col-lg-3 col-sm-6">
-                  <Card
-                    title="Legal Compliance"
-                    link="/service/service-details"
-                    src="/images/latest/pexels-rdne-7821573.jpg"
-                    alt="Service"
-                  />
-                  <Spacing lg="0" md="30" />
-                </Div>
-                <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                <Div className="col-lg-3 col-sm-6">
-                  <Card
-                    title="Digital Transformation"
-                    link="/service/service-details"
-                    src="/images/service_4.jpeg"
-                    alt="Service"
-                  />
-                  <Spacing lg="0" md="30" />
-                </Div>
-                <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-              </Div>
-            </Div>
-          </Div>
-        </Div>
-      </Div>
-      {/* End Service Section */}
-
-      {/* Start Portfolio Section */}
-      <Spacing lg="150" md="50" />
-
-
-      {/* <Div>
-        <Div className="container">
-          <SectionHeading
-            title="Portfolio to explore"
-            subtitle="Latest Projects"
-            variant="cs-style1 text-center"
+      {/* <Div className="container">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          transition={{ duration: 0.6 }}
+        >
+          <InfoLine
+            variant="cs-type1"
+            title={`"Empowering Dreams, Simplifying Success – Big4 Services at MSME Prices!"`}
           />
-          <Spacing lg="90" md="45" />
-        </Div>
-        <PortfolioSlider />
+        </motion.div>
       </Div> */}
-      {/* End Portfolio Section */}
 
+      <Div className={styles.ctaSection}>
+        <motion.div
+          className={styles.ctaButtons}
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          transition={{ duration: 0.8 }}
+        >
+          <Link to="/services" className={`${styles.ctaButton} ${styles.ctaButtonSecondary}`}>
+            <span className={styles.buttonText}>Explore Our Services</span>
+            <span className={styles.buttonBorder}></span>
+          </Link>
+        
+          <Link to="/contact" className={`${styles.ctaButton} ${styles.ctaButtonPrimary}`}>
+            <span className={styles.buttonText}>Book a Free Consultation</span>
+            <span className={styles.buttonBorder}></span>
+          </Link>
 
-      {/* Start Video Block Section */}
-      <Spacing lg="130" md="70" />
-      <Div className="container">
-        <h2 className="cs-font_50 cs-m0 text-center cs-line_height_4">
-          At Envesty, we turn financial challenges into opportunities. With our expert guidance,
-          your financial goals become achievable, helping you adapt, grow, and thrive in a constantly changing world.
-        </h2>
-
-        {/* <Spacing lg="70" md="70" /> */}
-        {/* <VideoModal
-          videoSrc="https://www.youtube.com/watch?v=VcaAVWtP48A"
-          bgUrl="/images/video_bg.jpeg"
-        /> */}
+        </motion.div>
       </Div>
 
-
-      {/* // Inside your Home component */}
       <Spacing lg="150" md="80" />
 
-      {/* Start Vision and Mission Section */}
       <Div className="container">
         <SectionHeading
-          title="Core Vision and Mission"
-          subtitle="Our Purpose and Pathway"
+          title="Services We Offer"
+          subtitle="How We Can Help"
           variant="cs-style1 text-center"
         />
         <Spacing lg="50" md="30" />
-        <Div className="row">
-          {/* Vision Column */}
-          <Div className="col-lg-6">
-            <Div className="cs-shadow_box_1 p-4">
-              <h3 className="cs-font_40 cs-m0">Vision</h3>
-              <p className="cs-font_16">
-                To empower families, MSMEs, and startups in Tier 2 and Tier 3 cities with financial literacy,
-                skill development, mentorship, and legal compliance.
-              </p>
-            </Div>
-          </Div>
+        <Div className={styles.servicesGrid}>
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/business.svg" alt="Virtual Co-Founder" />
+            </div>
+            <h3>Virtual Co-Founder</h3>
+          </motion.div>
 
-          {/* Mission Column */}
-          <Div className="col-lg-6">
-            <Div className="cs-shadow_box_1 p-4">
-              <h3 className="cs-font_40 cs-m0">Mission</h3>
-              <p className="cs-font_16">
-                Help families plan financially to secure their children’s education and future skill development.
-                Provide MSMEs and startups with simplified solutions for compliance, financial planning, and mentorship.
-              </p>
-            </Div>
-          </Div>
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/digital.svg" alt="Digital Transformation" />
+            </div>
+            <h3>Digital Transformation</h3>
+          </motion.div>
+
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/legal.svg" alt="Legal Consultancy" />
+            </div>
+            <h3>Legal Consultancy</h3>
+          </motion.div>
+
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/consulting.svg" alt="Business Consultancy" />
+            </div>
+            <h3>Business Consultancy</h3>
+          </motion.div>
+
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/financial.svg" alt="Personal Finance" />
+            </div>
+            <h3>Personal Finance</h3>
+          </motion.div>
         </Div>
       </Div>
 
+      <Spacing lg="150" md="80" />
+
+      <Div className={styles.missionVisionSection}>
+        <Div className="container">
+          <SectionHeading
+            title="Our Mission & Vision"
+            subtitle="What Drives Us"
+            variant="cs-style1 text-center text-white"
+          />
+          <Spacing lg="50" md="30" />
+          <Div className={styles.missionVisionGrid}>
+            <motion.div
+              className={styles.missionCard}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className={styles.cardIcon}>
+                <img src="/images/icons/mission_icon.svg" alt="Mission" />
+              </div>
+              <h3>Our Mission</h3>
+              <p>To empower businesses and individuals with accessible, high-quality professional services that drive growth and ensure success.</p>
+              <ul className={styles.missionPoints}>
+                <li>Democratize access to premium services</li>
+                <li>Foster growth and innovation</li>
+                <li>Build lasting partnerships</li>
+                <li>Deliver measurable impact</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              className={styles.visionCard}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className={styles.cardIcon}>
+                <img src="/images/icons/vision_icon.svg" alt="Vision" />
+              </div>
+              <h3>Our Vision</h3>
+              <p>To create a world where every business and individual has access to the expertise and resources needed to thrive.</p>
+              <ul className={styles.visionPoints}>
+                <li>World-class expertise for all</li>
+                <li>Simplified compliance</li>
+                <li>Digital transformation</li>
+                <li>Sustainable growth</li>
+              </ul>
+            </motion.div>
+          </Div>
+        </Div>
+      </Div>
 
       <Spacing lg="150" md="80" />
 
@@ -269,8 +266,8 @@ export default function Home() {
         <Div className="row">
           {/* Families */}
           <Div className="col-lg-4">
-            <Div className="cs-target_card cs-shadow_box_1">
-              <img src="/images/family_icon.svg" alt="Families" className="cs-icon" />
+            <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
+              <img src="/images/demo/“My Mom Has ADHD__ Stories of Growing Up with an ADD Mother.jpeg" alt="Families" className="cs-icon" />
               <h4 className="cs-font_30">Families</h4>
               <p className="cs-font_16">
                 Focused on financial literacy, long-term planning, and guidance for children’s skill acquisition.
@@ -280,19 +277,19 @@ export default function Home() {
 
           {/* Startups & MSMEs */}
           <Div className="col-lg-4">
-            <Div className="cs-target_card cs-shadow_box_1">
-              <img src="/images/startup_icon.svg" alt="Startups & MSMEs" className="cs-icon" />
+            <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
+              <img src="/images/demo/Supermarket.jpeg" alt="Startups & MSMEs" className="cs-icon" />
               <h4 className="cs-font_30">Startups & MSMEs</h4>
               <p className="cs-font_16">
-                Supporting legal compliance, financial advisory, and mentorship to help them scale and succeed.
+                Supporting business compliance, financial advisory, and mentorship to help them scale and succeed.
               </p>
             </Div>
           </Div>
 
           {/* Young Entrepreneurs */}
           <Div className="col-lg-4">
-            <Div className="cs-target_card cs-shadow_box_1">
-              <img src="/images/entrepreneur_icon.svg" alt="Young Entrepreneurs" className="cs-icon" />
+            <Div className={`cs-shadow_box_1 ${styles['cs-target_card']}`}>
+              <img src="/images/demo/Sprint%20Start%20Up%20Illustrations%20-%20Illustrations.jpeg" alt="Young Entrepreneurs" className="cs-icon" />
               <h4 className="cs-font_30">Young Entrepreneurs</h4>
               <p className="cs-font_16">
                 Targeting Gen-Z innovators with mentorship and business advisory to help them build successful ventures.
@@ -305,81 +302,6 @@ export default function Home() {
 
       <Spacing lg="150" md="80" />
 
-      {/* Start Key Offerings Section */}
-      <Div className="container">
-        <SectionHeading
-          title="Key Offerings"
-          subtitle="What We Provide"
-          variant="cs-style1 text-center"
-        />
-        <Spacing lg="50" md="30" />
-        <Div className="row">
-          {/* Financial Literacy and Advisory */}
-          <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/financial_advisory_icon.svg" alt="Financial Literacy" className="cs-icon" />
-              <h5 className="cs-font_20">Financial Literacy and Advisory</h5>
-              <p className="cs-font_16">
-                We help families and businesses make smart investments and plan for a secure future.
-              </p>
-            </Div>
-          </Div>
-
-          {/* Skill Development */}
-          <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/skill_dev_icon.svg" alt="Skill Development" className="cs-icon" />
-              <h5 className="cs-font_20">Skill Development</h5>
-              <p className="cs-font_16">
-                Offering skill-building programs in trending fields like AI, digital marketing, and entrepreneurship.
-              </p>
-            </Div>
-          </Div>
-
-          {/* Legal Compliance */}
-          <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/legal_compliance_icon.svg" alt="Legal Compliance" className="cs-icon" />
-              <h5 className="cs-font_20">Legal Compliance</h5>
-              <p className="cs-font_16">
-                We offer registration, tax compliance, and legal advisory services to businesses and families.
-              </p>
-            </Div>
-          </Div>
-
-          {/* Mentorship Services */}
-          <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/mentorship_icon.svg" alt="Mentorship Services" className="cs-icon" />
-              <h5 className="cs-font_20">Mentorship Services</h5>
-              <p className="cs-font_16">
-                Providing personalized mentorship programs for startups, young entrepreneurs, and parents.
-              </p>
-            </Div>
-          </Div>
-
-          {/* Community Building */}
-          <Div className="col-lg-3 col-sm-6">
-            <Div className="cs-key_card cs-shadow_box_2">
-              <img src="/images/community_icon.svg" alt="Community Building" className="cs-icon" />
-              <h5 className="cs-font_20">Community Building</h5>
-              <p className="cs-font_16">
-                Creating a platform for networking and knowledge sharing within the startup and family ecosystem.
-              </p>
-            </Div>
-          </Div>
-        </Div>
-      </Div>
-      {/* End Key Offerings Section */}
-
-      <Spacing lg="150" md="80" />
-
-      {/* End Vision and Mission Section */}
-
-      {/* <Spacing lg="150" md="80" /> */}
-
-      {/* End Video Block Section */}
-
       {/* Start Team Section */}
       {/* <Spacing lg="145" md="80" />
       <Div className="container">
@@ -391,15 +313,11 @@ export default function Home() {
         <Spacing lg="85" md="45" />
         <TeamSlider />
       </Div> */}
-      <Spacing lg="150" md="80" />
+      {/*<Spacing lg="150" md="80" />*/}
       {/* End Team Section */}
 
       {/* Start Testimonial Section */}
       {/* <TestimonialSlider /> */}
-
-
-
-
     </>
   );
 }

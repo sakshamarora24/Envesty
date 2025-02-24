@@ -1,0 +1,119 @@
+.aboutSection {
+  padding: 4rem 0;
+  position: relative;
+  background: #fff;
+}
+
+.aboutCard {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.05);
+}
+
+.funFactGrid {
+  display: flex;
+  gap: 1rem;
+  margin: 3rem 0;
+  overflow-x: auto;
+  padding: 0.5rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.funFactGrid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.funFactGrid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.funFactGrid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.funFactGrid::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.funFactCard {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  min-width: 200px;
+  flex: 1;
+}
+
+.funFactCard:hover {
+  background: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color, #ff4e00);
+}
+
+.funFactTitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 1rem 0;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.funFactCard:hover .funFactTitle {
+  color: var(--accent-color, #ff4e00);
+}
+
+.separator {
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color, #ff4e00);
+  margin: 1.5rem 0;
+}
+
+.aboutContent {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 2rem 0;
+  }
+  
+  .aboutCard {
+    padding: 1.5rem;
+  }
+}

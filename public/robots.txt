@@ -1,3 +1,9 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+
+# Sitemap location
+Sitemap: https://envesty.com/sitemap.xml

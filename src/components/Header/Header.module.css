@@ -1,0 +1,29 @@
+.logo {
+  width: auto;
+  height: auto;
+  max-width: 160px;
+  max-height: 120px;
+  transition: all 0.3s ease;
+}
+
+/* For tablets */
+@media (max-width: 992px) {
+  .logo {
+    max-width: 140px;
+    max-height: 100px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 576px) {
+  .logo {
+    max-width: 120px;
+    max-height: 90px;
+  }
+}
+
+/* When header is sticky */
+.sticky .logo {
+  max-width: 140px;
+  max-height: 100px;
+}

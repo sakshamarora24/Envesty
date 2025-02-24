@@ -1,19 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Div from '../Div'
-import './card.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Div from '../Div';
+import './card.scss';
 
-export default function Card({title, link, src, alt}) {
+export default function Card({ title, link, icon, subtitle }) {
   return (
     <Link to={link} className="cs-card cs-style1">
-      <>
-        <img src={src} alt={alt} />
-        <Div className="cs-card_overlay" />
-        <Div className="cs-card_info">
-          <span className=" cs-hover_layer3 cs-accent_bg" />
-          <h2 className="cs-card_title">{title}</h2>
-        </Div>
-      </>
+      <Div className="cs-card_inner">
+        <Div className="cs-card_icon">{icon}</Div>
+        <h3 className="cs-card_title">{title}</h3>
+        {subtitle && <p className="cs-card_subtitle">{subtitle}</p>}
+      </Div>
     </Link>
-  )
+  );
 }
