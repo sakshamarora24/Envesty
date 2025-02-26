@@ -115,12 +115,10 @@ export default function CareerPage() {
           <SectionHeading
             title="Current Openings"
             subtitle="Explore Opportunities"
+            className="cs-style1 cs-type1"
+            titleClassName={styles.blackTitle}
           >
-            <p>
-              Join our dynamic team and be part of an innovative company that's transforming the financial and business consulting landscape.
-            </p>
           </SectionHeading>
-
           <div className={styles.jobListing}>
             {jobListings.map((job, index) => (
               <div key={index} className={styles.jobCard}>
@@ -141,10 +139,8 @@ export default function CareerPage() {
           <SectionHeading 
             title="Apply Now" 
             subtitle="Send Your Application"
+            titleClassName={styles.blackTitle}
           >
-            <p>
-              Take the first step towards an exciting career with us. Fill out the application form below and we'll get back to you soon.
-            </p>
           </SectionHeading>
 
           <div className={styles.applicationForm}>

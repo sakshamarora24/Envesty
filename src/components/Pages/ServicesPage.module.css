@@ -1,0 +1,142 @@
+.servicesContainer {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.sectionHeading {
+  color: #333333;
+}
+
+.sectionHeading h2 {
+  background: linear-gradient(120deg, #333333, #666666);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.sectionHeading .subtitle {
+  color: #139CE8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.serviceCard {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(19, 156, 232, 0.15);
+}
+
+.serviceCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(19, 156, 232, 0.1), rgba(19, 156, 232, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.serviceCard:hover::after {
+  opacity: 1;
+}
+
+.serviceCard h3 {
+  color: #333333;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+.cardImage {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(19, 156, 232, 0.1), rgba(19, 156, 232, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.serviceCard:hover .cardImage::after {
+  opacity: 1;
+}
+
+.pricingSection {
+  background: linear-gradient(180deg, #ffffff, #f8f9fa);
+  padding: 80px 0;
+}
+
+.ctaSection {
+  background: linear-gradient(45deg, #139CE8, #0056b3);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 60px 40px;
+}
+
+.ctaSection h2 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.ctaButton {
+  background: #ffffff;
+  color: #139CE8;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.testimonialSection {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.testimonialCard {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin: 15px;
+}
+
+.testimonialText {
+  color: #666666;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.testimonialAuthor {
+  color: #333333;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.blackTitle {
+  color: #000000 !important;
+}

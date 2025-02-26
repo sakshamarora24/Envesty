@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import InfoLine from '../InfoLine';
 import Hero from '../Hero';
 import Div from '../Div';
@@ -7,40 +8,108 @@ import Spacing from '../Spacing';
 import { pageTitle } from '../../helper';
 import styles from './Home.module.css';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import ConsultationForm from '../ConsultationForm/ConsultationForm';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [showConsultation, setShowConsultation] = useState(false);
   const [hasShownPopup, setHasShownPopup] = useState(false);
+  const navigate = useNavigate();
   pageTitle('Home');
 
   const showcaseData = [
     {
-      title: 'Empower Your Business with Financial and <br> Legal Expertise',
+      title: 'Your Virtual Co-Founder and Wealth Partner',
+      buttons: (
+        <div className={styles.buttonGroup}>
+          <button 
+            className={`${styles.button} ${styles.primaryButton}`}
+            onClick={() => navigate('/services')}
+          >
+            Explore Our Services
+          </button>
+          <button 
+            className={`${styles.button} ${styles.primaryButton}`}
+            onClick={() => navigate('/contact')}
+          >
+            Book Free Consultation
+          </button>
+        </div>
+      ),
       bgImageUrl: '/images/slider_1.jpeg',
     },
     {
-      title: 'Master Financial Planning and Grow Your Wealth <br> with Confidence',
+      title: 'Unlock Your Entrepreneurial Potential and Build a Thriving Business',
+      buttons: (
+        <div className={styles.buttonGroup}>
+          <button 
+            className={`${styles.button} ${styles.primaryButton}`}
+            onClick={() => navigate('/services')}
+          >
+            Explore Our Services
+          </button>
+          <button 
+            className={`${styles.button} ${styles.primaryButton}`}
+            onClick={() => navigate('/contact')}
+          >
+            Book Free Consultation
+          </button>
+        </div>
+      ),
       bgImageUrl: '/images/slider_1.jpeg',
     },
     {
-      title: 'Navigate Your Financial Future <br> with Tailored Advice',
+      title: 'Simplify Your Business Compliance and Scale with Ease',
+      buttons: (
+        <div className={styles.buttonGroup}>
+          <button 
+            className={`${styles.button} ${styles.primaryButton}`}
+            onClick={() => navigate('/services')}
+          >
+            Explore Our Services
+          </button>
+          <button 
+            className={`${styles.button} ${styles.primaryButton}`}
+            onClick={() => navigate('/contact')}
+          >
+            Book Free Consultation
+          </button>
+        </div>
+      ),
       bgImageUrl: '/images/slider_1.jpeg',
     },
     {
-      title: 'Simplify Your Business Compliance <br> and Scale with Ease',
+      title: 'Master Financial Planning and Grow Your Wealth with Confidence',
+      buttons: (
+        <div className={styles.buttonGroup}>
+          <button 
+            className={`${styles.button} ${styles.primaryButton}`}
+            onClick={() => navigate('/services')}
+          >
+            Explore Our Services
+          </button>
+          <button 
+            className={`${styles.button} ${styles.primaryButton}`}
+            onClick={() => navigate('/contact')}
+          >
+            Book Free Consultation
+          </button>
+        </div>
+      ),
       bgImageUrl: '/images/slider_1.jpeg',
     },
-    {
-      title: 'Develop the Skills You Need <br> to Succeed in the Modern Economy',
-      bgImageUrl: '/images/slider_1.jpeg',
-    },
-    {
-      title: 'Unlock Your Entrepreneurial Potential and Build <br> a Thriving Business',
-      bgImageUrl: '/images/slider_1.jpeg',
-    },
+    // {
+    //   title: 'Navigate Your Financial Future <br> with Tailored Advice',
+    //   bgImageUrl: '/images/slider_1.jpeg',
+    // },
+    // {
+    //   title: 'Develop the Skills You Need <br> to Succeed in the Modern Economy',
+    //   bgImageUrl: '/images/slider_1.jpeg',
+    // },
+    // {
+    //   title: 'Unlock Your Entrepreneurial Potential and Build <br> a Thriving Business',
+    //   bgImageUrl: '/images/slider_1.jpeg',
+    // },
   ];
 
   useEffect(() => {
@@ -67,10 +136,10 @@ export default function Home() {
 
   const currentShowcase = showcaseData[currentSlide];
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+  // const fadeInUp = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: { opacity: 1, y: 0 },
+  // };
 
   return (
     <>
@@ -80,6 +149,9 @@ export default function Home() {
       />
       <Hero
         title={currentShowcase.title}
+        subtitle={currentShowcase.subtitle}
+        description={currentShowcase.description}
+        buttons={currentShowcase.buttons}
         // btnText="Book a Free Consultation"
         // btnLink="/contact"
         // subtitle="Big4 Services at MSME Prices!"
@@ -101,7 +173,7 @@ export default function Home() {
         </motion.div>
       </Div> */}
 
-      <Div className={styles.ctaSection}>
+      {/* <Div className={styles.ctaSection}>
         <motion.div
           className={styles.ctaButtons}
           initial="hidden"
@@ -120,138 +192,29 @@ export default function Home() {
           </Link>
 
         </motion.div>
-      </Div>
-
+      </Div> */}
       <Spacing lg="150" md="80" />
 
-      <Div className="container">
-        <SectionHeading
-          title="Services We Offer"
-          subtitle="How We Can Help"
-          variant="cs-style1 text-center"
-        />
-        <Spacing lg="50" md="30" />
-        <Div className={styles.servicesGrid}>
-          <motion.div
-            className={styles.serviceCard}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className={styles.cardIcon}>
-              <img src="/images/icons/business.svg" alt="Virtual Co-Founder" />
-            </div>
-            <h3>Virtual Co-Founder</h3>
-          </motion.div>
+<Div className={styles.statsContainer}>
+  {[
+    { value: '20+', label: 'Business Scaled' },
+    { value: '98%', label: 'Client Satisfaction' },
+    { value: '24x7', label: 'Support' },
+    { value: '10+', label: 'Expert Mentors' }
+  ].map((stat, index) => (
+    <motion.div
+      key={index}
+      className={styles.statItem}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <h3 className={styles.statValue}>{stat.value}</h3>
+      <p className={styles.statLabel}>{stat.label}</p>
+    </motion.div>
+  ))}
+</Div>
 
-          <motion.div
-            className={styles.serviceCard}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <div className={styles.cardIcon}>
-              <img src="/images/icons/digital.svg" alt="Digital Transformation" />
-            </div>
-            <h3>Digital Transformation</h3>
-          </motion.div>
-
-          <motion.div
-            className={styles.serviceCard}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className={styles.cardIcon}>
-              <img src="/images/icons/legal.svg" alt="Legal Consultancy" />
-            </div>
-            <h3>Legal Consultancy</h3>
-          </motion.div>
-
-          <motion.div
-            className={styles.serviceCard}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <div className={styles.cardIcon}>
-              <img src="/images/icons/consulting.svg" alt="Business Consultancy" />
-            </div>
-            <h3>Business Consultancy</h3>
-          </motion.div>
-
-          <motion.div
-            className={styles.serviceCard}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <div className={styles.cardIcon}>
-              <img src="/images/icons/financial.svg" alt="Personal Finance" />
-            </div>
-            <h3>Personal Finance</h3>
-          </motion.div>
-        </Div>
-      </Div>
-
-      <Spacing lg="150" md="80" />
-
-      <Div className={styles.missionVisionSection}>
-        <Div className="container">
-          <SectionHeading
-            title="Our Mission & Vision"
-            subtitle="What Drives Us"
-            variant="cs-style1 text-center text-white"
-          />
-          <Spacing lg="50" md="30" />
-          <Div className={styles.missionVisionGrid}>
-            <motion.div
-              className={styles.missionCard}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className={styles.cardIcon}>
-                <img src="/images/icons/mission_icon.svg" alt="Mission" />
-              </div>
-              <h3>Our Mission</h3>
-              <p>To empower businesses and individuals with accessible, high-quality professional services that drive growth and ensure success.</p>
-              <ul className={styles.missionPoints}>
-                <li>Democratize access to premium services</li>
-                <li>Foster growth and innovation</li>
-                <li>Build lasting partnerships</li>
-                <li>Deliver measurable impact</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              className={styles.visionCard}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className={styles.cardIcon}>
-                <img src="/images/icons/vision_icon.svg" alt="Vision" />
-              </div>
-              <h3>Our Vision</h3>
-              <p>To create a world where every business and individual has access to the expertise and resources needed to thrive.</p>
-              <ul className={styles.visionPoints}>
-                <li>World-class expertise for all</li>
-                <li>Simplified compliance</li>
-                <li>Digital transformation</li>
-                <li>Sustainable growth</li>
-              </ul>
-            </motion.div>
-          </Div>
-        </Div>
-      </Div>
 
       <Spacing lg="150" md="80" />
 
@@ -301,6 +264,217 @@ export default function Home() {
       {/* End Target Audience Section */}
 
       <Spacing lg="150" md="80" />
+
+      <Div className={styles.missionVisionSection}>
+        <Div className="container">
+          <SectionHeading
+            title="Choose Your Growth Plan"
+            subtitle="Comprehensive solutions for both business scaling and personal wealth management."
+            variant="cs-style1 text-center text-white"
+          />
+          <Spacing lg="50" md="30" />
+          <Div className={styles.missionVisionGrid}>
+            <motion.div
+              className={styles.missionCard}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className={styles.cardIcon}>
+                <img src="/images/icons/mission_icon.svg" alt="Business Service" />
+              </div>
+              <h3>Business Service</h3>
+              <p>Scale your business with experts and comprehensive support</p>
+              <ul className={styles['aligned-list']}>
+                <li>Customised solutions tailored to your business needs</li>
+                <li>Expert guidance and support throughout the journey</li>
+                <li>Support for business development, marketing, and finance</li>
+                <li>Access to a network of industry experts and resources</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              className={styles.visionCard}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className={styles.cardIcon}>
+                <img src="/images/icons/vision_icon.svg" alt="Personal Finance" />
+              </div>
+              <h3>Personal Finance</h3>
+              <p>Build and manage your wealth with personalised startegies</p>
+              <ul className={styles['aligned-list']}>
+                <li>Long and Short term Financial Planning</li>
+                <li>Complete Wealth Management</li>
+                <li>Guidance and Investment Advisory</li>
+                <li>Masterclasses to uplift your knowledge</li>
+              </ul>
+            </motion.div>
+          </Div>
+        </Div>
+      </Div>
+
+      <Spacing lg="150" md="80" />
+
+      <Div className="container">
+        <SectionHeading
+          title="Business Growth Services"
+          subtitle="Comprehensive Solutions to scale your business with expert guidance"
+          variant="cs-style1 text-center"
+        />
+        <Spacing lg="50" md="30" />
+        <Div className={styles.servicesGrid}>
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/virtual-co-founder.svg" alt="Virtual Co-Founder" />
+            </div>
+            <h3>Virtual Co-Founder</h3>
+          </motion.div>
+
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/digital-transformation.svg" alt="Digital Transformation" />
+            </div>
+            <h3>Digital Transformation</h3>
+          </motion.div>
+
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/legal-advisory.svg" alt="Legal Consultancy" />
+            </div>
+            <h3>Legal Consultancy</h3>
+          </motion.div>
+
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/business-advisory.svg" alt="Business Advisory" />
+            </div>
+            <h3>Business Advisory</h3>
+          </motion.div>
+        </Div>
+      </Div>
+
+      <Spacing lg="150" md="80" />
+
+      <Div className="container">
+        <SectionHeading
+          title="Personal Finance Solutions"
+          subtitle="Build and manage your wealth with expert guidance and proven strategies"
+          variant="cs-style1 text-center"
+        />
+        <Spacing lg="50" md="30" />
+        <Div className={styles.financeGrid}>
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/financial.svg" alt="Wealth Management" />
+            </div>
+            <h3>Wealth Management</h3>
+          </motion.div>
+
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/consulting.svg" alt="Financial Planning" />
+            </div>
+            <h3>Financial Planning</h3>
+          </motion.div>
+
+          <motion.div
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className={styles.cardIcon}>
+              <img src="/images/icons/investment-advisory.svg" alt="Investment Advisory" />
+            </div>
+            <h3>Investment Advisory</h3>
+          </motion.div>
+        </Div>
+      </Div>
+
+      <Spacing lg="150" md="80" />
+
+      <Div className={styles.missionVisionSection}>
+        <Div className="container">
+          <SectionHeading
+            title="Our Mission & Vision"
+            subtitle="What Drives Us"
+            variant="cs-style1 text-center text-white"
+          />
+          <Spacing lg="50" md="30" />
+          <Div className={styles.missionVisionGrid}>
+            <motion.div
+              className={styles.missionCard}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className={styles.cardIcon}>
+                <img src="/images/icons/mission_icon.svg" alt="Mission" />
+              </div>
+              <h3>Our Mission</h3>
+              <p>To empower businesses and individuals with innovative financial solutions and expert guidance for sustainable growth and wealth creation.</p>
+            </motion.div>
+
+            <motion.div
+              className={styles.visionCard}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className={styles.cardIcon}>
+                <img src="/images/icons/vision_icon.svg" alt="Vision" />
+              </div>
+              <h3>Our Vision</h3>
+              <p>To become world's most trusted platform for integrated business growth and wealth management services.</p>
+            </motion.div>
+          </Div>
+        </Div>
+      </Div>
+
+      <Spacing lg="50" md="80" />
 
       {/* Start Team Section */}
       {/* <Spacing lg="145" md="80" />
