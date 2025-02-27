@@ -121,6 +121,8 @@ export default function Header({ variant }) {
                     onClick={() => setMobileToggle(!mobileToggle)}
                   >
                     <span></span>
+                    {/* <span></span>
+                    <span></span> */}
                   </span>
                 </Div>
               </Div>
