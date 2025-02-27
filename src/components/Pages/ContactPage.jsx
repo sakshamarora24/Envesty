@@ -76,7 +76,7 @@ export default function ContactPage() {
     {
       icon: <Mail className={styles.contactInfoIcon} />,
       title: 'Email Us',
-      content: 'info@envesty.com',
+      content: 'support@envesty.in',
     },
     {
       icon: <Phone className={styles.contactInfoIcon} />,
