@@ -110,7 +110,7 @@ html {
   font-size: 2.8rem;
   color: var(--heading-color, #fff);
   font-weight: 700;
-  background: linear-gradient(to right, #FFD700, #FFA500);
+  background: linear-gradient(to right, #ffffff, #6c6c6c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -119,7 +119,7 @@ html {
 
 .serviceSubtitle {
   font-size: 1.5rem;
-  color: var(--accent-color, #FFD700);
+  color: var(--accent-color, #ffffff);
   margin-bottom: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -138,7 +138,7 @@ html {
 .serviceLine {
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, transparent, #FFD700, transparent);
+  background: linear-gradient(to right, transparent, #ffffff, transparent);
 }
 
 .serviceDescription {
@@ -159,6 +159,7 @@ html {
 .serviceCard {
   position: relative;
   border-radius: 15px;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -178,7 +179,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, #FFD700, #FFA500);
+  background: linear-gradient(45deg, #ffffff, #c1c1c1);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
@@ -202,7 +203,7 @@ html {
   color: var(--heading-color, #fff);
   font-weight: 600;
   margin: 0;
-  background: linear-gradient(to right, #FFD700, #FFA500);
+  background: linear-gradient(to right, #ffffff, #6c6c6c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -234,29 +235,6 @@ html {
   width: 40px;
   height: 40px;
   filter: brightness(0) saturate(100%) invert(79%) sepia(38%) saturate(1000%) hue-rotate(359deg) brightness(105%) contrast(107%);
-}
-
-.sectionDivider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.dividerLine {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #FFD700, transparent);
-  max-width: 200px;
-}
-
-.dividerDot {
-  width: 10px;
-  height: 10px;
-  background: #FFD700;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .services-page {
@@ -491,5 +469,59 @@ html {
 
   .service-section {
     padding: 25px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+  }
+
+  .serviceCard {
+    padding: 30px;
+  }
+
+  .serviceCardIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .serviceCardIcon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .serviceCard h3 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCard {
+    padding: 25px;
+  }
+
+  .serviceCardIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .serviceCardIcon img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .serviceCard h3 {
+    font-size: 20px;
+  }
+
+  .serviceCard p,
+  .servicePoints li {
+    font-size: 15px;
   }
 }

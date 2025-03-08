@@ -52,8 +52,9 @@ export default function AboutPage() {
             <Div className="col-xl-5 col-lg-6">
               <div className={styles.aboutCard}>
                 <SectionHeading
-                  title="Your trusted partner for Financial and Legal Services"
+                  title="Your trusted partner for Personal Finance and Business Services"
                   subtitle="About Our Company"
+                  titleClassName={styles.blackTitle}
                 >
                   <div className={styles.aboutContent}>
                     <p>
@@ -111,8 +112,9 @@ export default function AboutPage() {
             <Div className="col-xl-5 offset-xl-1 col-lg-6">
               <div className={styles.aboutCard}>
                 <SectionHeading
-                  title="Why Choose Envesty Solutions?"
+                  title="Why Choose Envesty?"
                   subtitle="Our Expertise"
+                  titleClassName={styles.blackTitle}
                 >
                   <div className={styles.aboutContent}>
                     <p>

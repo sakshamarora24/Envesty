@@ -76,7 +76,7 @@ export default function ContactPage() {
     {
       icon: <Mail className={styles.contactInfoIcon} />,
       title: 'Email Us',
-      content: 'info@envesty.com',
+      content: 'support@envesty.in',
     },
     {
       icon: <Phone className={styles.contactInfoIcon} />,
@@ -106,6 +106,7 @@ export default function ContactPage() {
                 <SectionHeading
                   title="Let's Start Your Project Together"
                   subtitle="Get in Touch"
+                  titleClassName={styles.blackTitle}
                 >
                   {/* <p className={styles.contactDescription}>
                     Ready to transform your business? We're here to help you achieve your goals. 

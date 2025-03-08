@@ -31,8 +31,12 @@ const CustomCursor = () => {
   }, []);
 
   React.useEffect(() => {
+    let animationFrameId;
+
     const followMouse = () => {
-      positionRef.current.key = requestAnimationFrame(followMouse);
+      animationFrameId = requestAnimationFrame(followMouse);
+      positionRef.current.key = animationFrameId;
+      
       const {
         mouseX,
         mouseY,
@@ -41,12 +45,13 @@ const CustomCursor = () => {
         distanceX,
         distanceY,
       } = positionRef.current;
+      
       if (!destinationX || !destinationY) {
         positionRef.current.destinationX = mouseX;
         positionRef.current.destinationY = mouseY;
       } else {
-        positionRef.current.distanceX = (mouseX - destinationX) * 0.1;
-        positionRef.current.distanceY = (mouseY - destinationY) * 0.1;
+        positionRef.current.distanceX = (mouseX - destinationX) * 0.3;
+        positionRef.current.distanceY = (mouseY - destinationY) * 0.3;
         if (
           Math.abs(positionRef.current.distanceX) +
             Math.abs(positionRef.current.distanceY) <
@@ -59,11 +64,19 @@ const CustomCursor = () => {
           positionRef.current.destinationY += distanceY;
         }
       }
-      cursorSm.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      cursorSm.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
       cursorLg.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
     };
+    
     followMouse();
+    
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, []);
+
   return (
     <>
       <div className="cs-cursor_lg" ref={cursorLg}></div>

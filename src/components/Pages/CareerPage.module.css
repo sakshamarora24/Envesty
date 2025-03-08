@@ -36,6 +36,10 @@
   font-weight: 600;
 }
 
+.blackTitle {
+  color: #000000 !important;
+}
+
 .jobDescription {
   color: var(--cs-color_text, #666);
   line-height: 1.6;

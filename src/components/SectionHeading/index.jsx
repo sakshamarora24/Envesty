@@ -4,11 +4,11 @@ import Button from '../Button'
 import Spacing from '../Spacing'
 import Div from '../Div';
 
-export default function SectionHeading({title, subtitle, btnLink, btnText, variant, children}) {
+export default function SectionHeading({title, subtitle, btnLink, btnText, variant, children, className, titleClassName}) {
   return (
-    <Div className={variant ? `cs-section_heading ${variant}` : `cs-section_heading cs-style1`}>
-      <h3 className="cs-section_subtitle">{parse(subtitle)}</h3>
-      <h2 className="cs-section_title">{parse(title)}</h2>
+    <Div className={`${variant ? `cs-section_heading ${variant}` : 'cs-section_heading cs-style1'} ${className || ''}`}>
+      {subtitle && <h3 className="cs-section_subtitle">{parse(subtitle)}</h3>}
+      <h2 className={`cs-section_title ${titleClassName || ''}`}>{parse(title)}</h2>
       {children}
       {btnText && (
         <>

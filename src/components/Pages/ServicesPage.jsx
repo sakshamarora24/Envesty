@@ -8,119 +8,135 @@ import Div from '../Div'
 import SectionHeading from '../SectionHeading'
 import TestimonialSlider from '../Slider/TestimonialSlider'
 import Spacing from '../Spacing'
+import styles from './ServicesPage.module.css'
 
 export default function ServicesPage() {
-  pageTitle('Service');
+  pageTitle('Services');
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <>
+    <div className={styles.servicesContainer}>
       <PageHeading 
-        title='Services'
+        title='Our Services'
         bgSrc='images/service_hero_bg.jpeg'
         pageLinkText='Services'
       />
       <Spacing lg='150' md='80'/>
-      <Div className='cs-shape_wrap_4'>
-        <Div className="cs-shape_4"></Div>
-        <Div className="cs-shape_4"></Div>
-        <Div className="container">
-          <Div className="row">
-            <Div className="col-xl-4">
+      <Div className='container'>
+        <Div className="row">
+          <Div className="col-xl-4">
+            <div className={styles.sectionHeading}>
               <SectionHeading
-                title='Services we can help you with' 
-                subtitle=''
+                title='Expert Solutions for Your Business Growth' 
+                subtitle='Our Services'
+                titleClassName={styles.blackTitle}
               />
-              <Spacing lg='90' md='45'/>
-            </Div>
-            <Div className='col-xl-8'>
-              <Div className='row'>
-                <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
-                <Div className='col-lg-3 col-sm-6'>
+            </div>
+            <Spacing lg='90' md='45'/>
+          </Div>
+          <Div className='col-xl-8'>
+            <Div className='row'>
+              <Div className='col-lg-4 col-sm-6'>
+                <div className={styles.serviceCard}>
                   <Card
-                    title='UI/UX design'
-                    link='/service/ui-ux-design'
+                    title='Business Advisory'
+                    link='/service/business-advisory'
                     src='/images/service_1.jpeg'
-                    alt='Service'
+                    alt='Business Advisory'
                   />
-                  <Spacing lg='0' md='30'/>
-                </Div>
-                <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
-                <Div className='col-lg-3 col-sm-6'>
+                </div>
+                <Spacing lg='30' md='30'/>
+              </Div>
+              <Div className='col-lg-4 col-sm-6'>
+                <div className={styles.serviceCard}>
                   <Card
-                    title='React.js Development'
-                    link='/service/reactjs-development'
+                    title='Financial Planning'
+                    link='/service/financial-planning'
                     src='/images/service_2.jpeg'
-                    alt='Service'
+                    alt='Financial Planning'
                   />
-                  <Spacing lg='0' md='30'/>
-                </Div>
-                <Div className='col-lg-3 col-sm-6'>
+                </div>
+                <Spacing lg='30' md='30'/>
+              </Div>
+              <Div className='col-lg-4 col-sm-6'>
+                <div className={styles.serviceCard}>
                   <Card
-                    title='Digital Marketing'
-                    link='/service/digital-marketing'
+                    title='Investment Advisory'
+                    link='/service/investment-advisory'
                     src='/images/service_3.jpeg'
-                    alt='Service'
+                    alt='Investment Advisory'
                   />
-                  <Spacing lg='0' md='30'/>
-                </Div>
-                <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
-                <Div className='col-lg-3 col-sm-6'>
+                </div>
+                <Spacing lg='30' md='30'/>
+              </Div>
+              <Div className='col-lg-4 col-sm-6'>
+                <div className={styles.serviceCard}>
                   <Card
-                    title='Technology'
-                    link='/service/technology'
+                    title='Legal Services'
+                    link='/service/legal-services'
                     src='/images/service_4.jpeg'
-                    alt='Service'
+                    alt='Legal Services'
                   />
-                  <Spacing lg='0' md='30'/>
-                </Div>
-                <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
-                <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
-                <Div className='col-lg-3 col-sm-6'>
+                </div>
+                <Spacing lg='30' md='30'/>
+              </Div>
+              <Div className='col-lg-4 col-sm-6'>
+                <div className={styles.serviceCard}>
                   <Card
-                    title='Consultancy'
-                    link='/service/consultancy'
+                    title='Wealth Management'
+                    link='/service/wealth-management'
                     src='/images/service_5.jpeg'
-                    alt='Service'
+                    alt='Wealth Management'
                   />
-                  <Spacing lg='0' md='30'/>
-                </Div>
-                <Div className='col-lg-3 col-sm-6 cs-hidden_mobile'></Div>
-                <Div className='col-lg-3 col-sm-6'>
+                </div>
+                <Spacing lg='30' md='30'/>
+              </Div>
+              <Div className='col-lg-4 col-sm-6'>
+                <div className={styles.serviceCard}>
                   <Card
-                    title='Creative Design'
-                    link='/service/creative-design'
+                    title='Digital Transformation'
+                    link='/service/digital-transformation'
                     src='/images/service_6.jpeg'
-                    alt='Service'
+                    alt='Digital Transformation'
                   />
-                  <Spacing lg='0' md='30'/>
-                </Div>
+                </div>
+                <Spacing lg='30' md='30'/>
               </Div>
             </Div>
           </Div>
         </Div>
       </Div>
       <Spacing lg='150' md='80'/>
-      <Div className="container">
-        <SectionHeading
-          title='Providing best <br/>pricing for client' 
-          subtitle='Pricing & Packaging'
-        />
-        <Spacing lg='85' md='40'/>
-        <PricingTableList/>
-      </Div>
+      <div className={styles.pricingSection}>
+        <Div className="container">
+          <div className={styles.sectionHeading}>
+            <SectionHeading
+              title='Investment Plans' 
+              subtitle='Pricing & Packages'
+              titleClassName={styles.blackTitle}
+            />
+          </div>
+          <Spacing lg='85' md='40'/>
+          <PricingTableList/>
+        </Div>
+      </div>
       <Spacing lg='125' md='55'/>
-      <TestimonialSlider/>
+      <div className={styles.testimonialSection}>
+        <TestimonialSlider/>
+      </div>
       <Spacing lg='150' md='80'/>
       <Div className="container">
-        <Cta 
-          title='Let’s disscuse make <br />something <i>cool</i> together' 
-          btnText='Apply For Meeting' 
-          btnLink='/contact' 
-          bgSrc='/images/cta_bg.jpeg'
-        />
+        <div className={styles.ctaSection}>
+          <Cta 
+            title="Let's Discuss Your Business Growth" 
+            btnText='Schedule a Consultation' 
+            btnLink='/contact' 
+            bgSrc='/images/cta_bg.jpeg'
+          />
+        </div>
       </Div>
-    </>
+      <Spacing lg='80' md='40'/>
+    </div>
   )
 }
